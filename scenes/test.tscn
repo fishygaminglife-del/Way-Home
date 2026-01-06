@@ -1,0 +1,129 @@
+[gd_scene load_steps=29 format=3 uid="uid://bpnq08gh8tgy"]
+
+[ext_resource type="Texture2D" uid="uid://k641nm81lk5e" path="res://images/UnderGround2.png" id="1_at5dv"]
+[ext_resource type="Texture2D" uid="uid://dom0yopg86c72" path="res://images/Slope Side1.png" id="1_jcd4p"]
+[ext_resource type="Texture2D" uid="uid://cxd70jgp0gs00" path="res://images/Middle Grass.png" id="2_74lek"]
+[ext_resource type="Texture2D" uid="uid://dx1i2gh2f5dap" path="res://images/Side Grass.png" id="2_lpvoh"]
+[ext_resource type="Texture2D" uid="uid://pah0fvgjo57g" path="res://images/Slope Side1-2.png" id="3_ajshl"]
+[ext_resource type="Texture2D" uid="uid://cvextsayph843" path="res://images/Slope Side.png" id="3_at5dv"]
+[ext_resource type="Script" uid="uid://xl05bnqttgyq" path="res://scripts/test.gd" id="4_74lek"]
+[ext_resource type="Texture2D" uid="uid://buomdsosscgbt" path="res://images/Under.png" id="4_ghpyy"]
+[ext_resource type="Texture2D" uid="uid://bqfhuqvgh75sn" path="res://images/Slope.png" id="4_jcd4p"]
+[ext_resource type="Texture2D" uid="uid://dceth4eo7xq3u" path="res://images/Under1.png" id="5_44saj"]
+[ext_resource type="Texture2D" uid="uid://b06nl4b76whu0" path="res://images/UnderGround1.png" id="6_at5dv"]
+[ext_resource type="PackedScene" uid="uid://lbytw35r30qf" path="res://scenes/MainCharacter.tscn" id="12_44saj"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7mbro"]
+texture = ExtResource("1_jcd4p")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jcd4p"]
+texture = ExtResource("1_at5dv")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ff6ho"]
+texture = ExtResource("3_ajshl")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7yos8"]
+texture = ExtResource("4_ghpyy")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5jxlq"]
+texture = ExtResource("5_44saj")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uacia"]
+texture = ExtResource("2_74lek")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yk7ts"]
+texture = ExtResource("2_lpvoh")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ajshl"]
+texture = ExtResource("3_at5dv")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ghpyy"]
+texture = ExtResource("4_jcd4p")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_44saj"]
+texture = ExtResource("6_at5dv")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_7mbro"]
+tile_size = Vector2i(32, 32)
+sources/5 = SubResource("TileSetAtlasSource_uacia")
+sources/6 = SubResource("TileSetAtlasSource_yk7ts")
+sources/7 = SubResource("TileSetAtlasSource_ajshl")
+sources/8 = SubResource("TileSetAtlasSource_ghpyy")
+sources/9 = SubResource("TileSetAtlasSource_44saj")
+sources/10 = SubResource("TileSetAtlasSource_jcd4p")
+sources/1 = SubResource("TileSetAtlasSource_7mbro")
+sources/2 = SubResource("TileSetAtlasSource_ff6ho")
+sources/3 = SubResource("TileSetAtlasSource_7yos8")
+sources/4 = SubResource("TileSetAtlasSource_5jxlq")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_44saj"]
+size = Vector2(1152, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mbro"]
+size = Vector2(181.50352, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ff6ho"]
+size = Vector2(188, 20)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7yos8"]
+radius = 8.0
+height = 28.0
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ghpyy"]
+b = Vector2(-7, 7)
+
+[node name="TileMap" type="TileMap"]
+position = Vector2(0, 8)
+tile_set = SubResource("TileSet_7mbro")
+format = 2
+layer_0/tile_data = PackedInt32Array(1179648, 9, 0, 1179649, 9, 0, 1179650, 9, 0, 1179651, 9, 0, 1179652, 9, 0, 1179653, 9, 0, 1179654, 9, 0, 1179655, 9, 0, 1179656, 9, 0, 1179657, 9, 0, 1179658, 9, 0, 1179659, 9, 0, 1179660, 9, 0, 1179661, 9, 0, 1179662, 9, 0, 1179663, 9, 0, 1179664, 9, 0, 1179665, 9, 0, 1179666, 9, 0, 1179667, 9, 0, 1179668, 9, 0, 1179669, 9, 0, 1179670, 9, 0, 1179671, 9, 0, 1179672, 9, 0, 1179673, 9, 0, 1179674, 9, 0, 1179675, 9, 0, 1179676, 9, 0, 1179677, 9, 0, 1179678, 9, 0, 1179679, 9, 0, 1179680, 9, 0, 1179681, 9, 0, 1179682, 9, 0, 1179683, 9, 0, 1114112, 5, 0, 1114113, 5, 0, 1114114, 5, 0, 1114115, 5, 0, 1114116, 5, 0, 1114117, 5, 0, 1114118, 5, 0, 1114123, 5, 0, 1114124, 5, 0, 1114125, 5, 0, 1114126, 5, 0, 1114127, 5, 0, 1114128, 5, 0, 1114129, 5, 0, 1114130, 5, 0, 1114131, 5, 0, 1114132, 5, 0, 1114133, 5, 0, 1114134, 5, 0, 1114135, 5, 0, 1114136, 5, 0, 1114137, 5, 0, 1114138, 5, 0, 1114139, 5, 0, 1114140, 5, 0, 1114141, 5, 0, 1114142, 5, 0, 1114143, 5, 0, 1114144, 5, 0, 1114145, 5, 0, 1114146, 5, 0, 1114147, 5, 0, 1048583, 8, 268435456, 851978, 8, 268435456, 851979, 5, 0, 851980, 5, 0, 851981, 5, 0, 851982, 5, 0, 851983, 5, 0, 851984, 6, 0, 983048, 8, 268435456, 917513, 8, 268435456, 1048584, 7, 0, 917514, 7, 0, 983049, 1, 0, 1114119, 2, 0, 1114120, 3, 0, 1114121, 3, 0, 1048585, 4, 0, 983050, 4, 0, 1048586, 4, 0, 1114122, 3, 268435456)
+script = ExtResource("4_74lek")
+
+[node name="Player" parent="." instance=ExtResource("12_44saj")]
+position = Vector2(60, 533)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-1, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(576, 554)
+shape = SubResource("RectangleShape2D_44saj")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(294.3288, 487.67114)
+rotation = 2.3561945
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_7mbro")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(446, 426)
+shape = SubResource("RectangleShape2D_ff6ho")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(537, 431)
+shape = SubResource("CapsuleShape2D_7yos8")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(353, 417)
+shape = SubResource("SegmentShape2D_ghpyy")

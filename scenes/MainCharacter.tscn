@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://lbytw35r30qf"]
+[gd_scene load_steps=12 format=3 uid="uid://lbytw35r30qf"]
 
 [ext_resource type="Script" uid="uid://y7yhxwiox86x" path="res://scripts/Player.gd" id="1_udfat"]
 [ext_resource type="Texture2D" uid="uid://cfwhwks3qa8kp" path="res://images/idle character.png" id="2_iivhx"]
@@ -64,14 +64,19 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iivhx"]
+radius = 6.0
+height = 26.0
+
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(580, 324)
 script = ExtResource("1_udfat")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-3, -16, 2, -16, 2, -15, 3, -15, 3, -14, 8, -14, 8, -13, 7, -13, 7, -12, 3, -12, 3, -10, 4, -10, 4, -4, 3, -4, 3, -3, 1, -3, 1, 0, 2, 0, 2, 1, 3, 1, 3, 2, 4, 2, 4, 4, 3, 4, 3, 6, 2, 6, 2, 7, 2, 8, 3, 8, 3, 11, 0, 11, 0, 8, -2, 8, -2, 11, -5, 11, -5, 6, -6, 6, -6, 1, -4, 1, -4, 0, -3, 0, -3, -3, -4, -3, -4, -4, -5, -4, -5, -5, -6, -5, -6, -10, -5, -10, -5, -14, -4, -14, -4, -15, -3, -15)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1hnck")
 animation = &"idle"
 speed_scale = 0.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -2)
+shape = SubResource("CapsuleShape2D_iivhx")

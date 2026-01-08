@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://c0jq8s8miyjcp"]
+
+[ext_resource type="Script" uid="uid://oxpmodtsh1mr" path="res://scenes/npc.gd" id="1_7fv6s"]
+[ext_resource type="Texture2D" uid="uid://cwl4754ag14r4" path="res://images/IdleNpc.png" id="1_c4qij"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fv6s"]
+atlas = ExtResource("1_c4qij")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bq5aw"]
+atlas = ExtResource("1_c4qij")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ux5il"]
+atlas = ExtResource("1_c4qij")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_35fls"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7fv6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bq5aw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ux5il")
+}],
+"loop": true,
+"name": &"idleNPC",
+"speed": 5.0
+}]
+
+[node name="NPC" type="Node2D"]
+script = ExtResource("1_7fv6s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_35fls")
+animation = &"idleNPC"
+frame_progress = 0.8502528
+speed_scale = 0.3

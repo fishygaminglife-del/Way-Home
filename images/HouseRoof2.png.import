@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dom0yopg86c72"
-path="res://.godot/imported/Slope Side1.png-9802648ec6683addff0ea765d6456bb4.ctex"
+uid="uid://37owmqs3t8bi"
+path="res://.godot/imported/HouseRoof2.png-e5fb23640cb9c520adec5a3d008e9152.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/Slope Side1.png"
-dest_files=["res://.godot/imported/Slope Side1.png-9802648ec6683addff0ea765d6456bb4.ctex"]
+source_file="res://images/HouseRoof2.png"
+dest_files=["res://.godot/imported/HouseRoof2.png-e5fb23640cb9c520adec5a3d008e9152.ctex"]
 
 [params]
 

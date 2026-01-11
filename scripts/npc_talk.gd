@@ -1,8 +1,8 @@
 extends Area2D
-var counter = 0
-
+var is_playing = true
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player") and counter == 0:
+	if body.is_in_group("player") and is_playing == true:
+		is_playing = false
 		$"../Player/Text".text = "Sir, why are you still here."
 		$"../Player/Name".text = "Coworker"
 		$"../Player/Name".visible = true
@@ -16,12 +16,11 @@ func _on_body_entered(body: Node2D) -> void:
 		$"../Player/Text".visible = true
 		$"../Player/AnimationPlayer".play("text_play")
 		await $"../Player/AnimationPlayer".animation_finished
-	#	$"../Player/Camera2D".position = Vector2.ZERO
 		$"../Player/Text".visible = false
 		$"../Player/Npc".visible = false
 		$"../Player/Name".visible = false
 		$"../Player/TextBox".visible = false
-		counter = 1
+		is_playing = false
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		pass

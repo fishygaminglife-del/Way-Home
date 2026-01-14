@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhetw58730iq5"]
+
+[ext_resource type="Texture2D" uid="uid://dwmv3ptaumo2a" path="res://SpriteFrames/Mole1.png" id="1_1ef4p"]
+[ext_resource type="Script" uid="uid://dioi7aak7nceg" path="res://scripts/mole_1.gd" id="1_b4uvm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4uvm"]
+atlas = ExtResource("1_1ef4p")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ks0tf"]
+atlas = ExtResource("1_1ef4p")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d6ams"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4uvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ks0tf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Mole1" type="Node2D"]
+script = ExtResource("1_b4uvm")
+point_a = Vector2(389, 540)
+point_b = Vector2(569, 540)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_d6ams")
+frame_progress = 0.543418
+speed_scale = 0.55
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-1, 6)
+polygon = PackedVector2Array(-4, -3, 3, -3, 3, -2, 4, -2, 4, -1, 6, -1, 6, -3, 7, -3, 7, -6, 6, -6, 6, -10, 8, -10, 8, -9, 9, -9, 9, -7, 12, -7, 12, -6, 14, -6, 14, -5, 15, -5, 15, -1, 12, -1, 12, 0, 10, 0, 10, 2, 9, 2, 9, 3, 6, 3, 6, 8, -8, 8, -8, 4, -9, 4, -9, 5, -11, 5, -11, 6, -12, 6, -12, 7, -13, 7, -13, 5, -12, 5, -12, 4, -10, 4, -10, 2, -8, 2, -8, 1, -7, 1, -7, -1, -6, -1, -6, -2, -4, -2)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

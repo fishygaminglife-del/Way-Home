@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dm33kiecqc0wy"
-path="res://.godot/imported/animate character.png-e07c050ade70877a041a602b42942112.ctex"
+uid="uid://bsatd0wishvco"
+path="res://.godot/imported/IdleNpc.png-b9cd657459d8eb06110d62b242a9ac8e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/animate character.png"
-dest_files=["res://.godot/imported/animate character.png-e07c050ade70877a041a602b42942112.ctex"]
+source_file="res://SpriteFrames/IdleNpc.png"
+dest_files=["res://.godot/imported/IdleNpc.png-b9cd657459d8eb06110d62b242a9ac8e.ctex"]
 
 [params]
 

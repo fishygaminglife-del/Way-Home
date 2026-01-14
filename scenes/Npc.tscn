@@ -1,18 +1,18 @@
 [gd_scene load_steps=7 format=3 uid="uid://c0jq8s8miyjcp"]
 
 [ext_resource type="Script" uid="uid://oxpmodtsh1mr" path="res://scripts/npc.gd" id="1_7fv6s"]
-[ext_resource type="Texture2D" uid="uid://cwl4754ag14r4" path="res://images/IdleNpc.png" id="1_c4qij"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7fv6s"]
-atlas = ExtResource("1_c4qij")
-region = Rect2(0, 0, 32, 32)
+[ext_resource type="Texture2D" uid="uid://bsatd0wishvco" path="res://SpriteFrames/IdleNpc.png" id="2_7fv6s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bq5aw"]
-atlas = ExtResource("1_c4qij")
-region = Rect2(32, 0, 32, 32)
+atlas = ExtResource("2_7fv6s")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ux5il"]
-atlas = ExtResource("1_c4qij")
+atlas = ExtResource("2_7fv6s")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35fls"]
+atlas = ExtResource("2_7fv6s")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_35fls"]
@@ -24,13 +24,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7fv6s")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_bq5aw")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ux5il")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35fls")
 }],
 "loop": true,
 "name": &"idleNPC",

@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://dn3tfembksmo"]
+
+[ext_resource type="Script" uid="uid://cwijve0b4i2aj" path="res://scenes/arrow.gd" id="1_3pw4r"]
+[ext_resource type="Texture2D" uid="uid://nx53nbq4ytad" path="res://SpriteFrames/ArrowAnimation.png" id="1_4yf74"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pw4r"]
+atlas = ExtResource("1_4yf74")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhgny"]
+atlas = ExtResource("1_4yf74")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vclp8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3pw4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhgny")
+}],
+"loop": true,
+"name": &"ArrowFlip",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Arrow" type="Node2D"]
+script = ExtResource("1_3pw4r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vclp8")
+animation = &"ArrowFlip"
+frame_progress = 0.7875744
+speed_scale = 0.35

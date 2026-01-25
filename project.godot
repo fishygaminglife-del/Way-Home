@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Way Home"
+run/main_scene="uid://bkhvv37ovsxm"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameState="*res://scripts/GameState.gd"
 
 [display]
 

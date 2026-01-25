@@ -14,16 +14,18 @@ func _on_body_entered(body: Node2D) -> void:
 		$"../Player/AnimationPlayer".play("text_play")
 		await $"../Player/AnimationPlayer".animation_finished
 		$"../Player/Text".visible = false
-		$"../Player/Text".text = "Your live all the way over there!"
+		$"../Player/Text".text = "You live all the way over there!"
 		$"../Player/Text".visible = true
 		$"../Player/AnimationPlayer".play("text_play")
-		$"../Arrow".visible = true
+		$"../SpriteAnimations/Arrow".visible = true
 		$"../StaticBody2D/blocker1".disabled = true
 		await $"../Player/AnimationPlayer".animation_finished
 		$"../Player/Text".visible = false
 		$"../Player/Npc".visible = false
 		$"../Player/Namelabel".visible = false
 		$"../Player/TextBox".visible = false
+		$"../StaticBody2D/blocker 3".disabled = true
+		$"../SpriteAnimations/Arrow2".visible = true
 		
 		is_playing = false
 func _on_body_exited(body: Node2D) -> void:

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dn3tfembksmo"]
 
-[ext_resource type="Script" uid="uid://cwijve0b4i2aj" path="res://scenes/arrow.gd" id="1_3pw4r"]
+[ext_resource type="Script" uid="uid://cwijve0b4i2aj" path="res://scripts/arrow.gd" id="1_3pw4r"]
 [ext_resource type="Texture2D" uid="uid://nx53nbq4ytad" path="res://SpriteFrames/ArrowAnimation.png" id="1_4yf74"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3pw4r"]

@@ -1,0 +1,119 @@
+[gd_scene load_steps=14 format=3 uid="uid://bkhvv37ovsxm"]
+
+[ext_resource type="Script" uid="uid://bvoovga4fls6x" path="res://scripts/home_screen.gd" id="1_gi7ve"]
+[ext_resource type="Texture2D" uid="uid://24j8a6c3k7ek" path="res://images/HomePage.png" id="1_iqt0l"]
+[ext_resource type="FontFile" uid="uid://crprgneoqco73" path="res://fonts/pixel_operator/PixelOperator8-Bold.ttf" id="2_dki4i"]
+[ext_resource type="Texture2D" uid="uid://bjr7r5s64fmma" path="res://SpriteFrames/idle character.png" id="3_3ie6y"]
+[ext_resource type="Script" uid="uid://c3p8nhjxsujc1" path="res://scripts/PlayerFlip.gd" id="4_bjvx2"]
+[ext_resource type="Script" uid="uid://dp8bcmt1ys2b7" path="res://scripts/PlayerHome.gd" id="4_l1h2q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ie6y"]
+bg_color = Color(0.6818443, 0.27008253, 0.18534118, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iqt0l"]
+bg_color = Color(0.82856476, 0.35891354, 0.259668, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dki4i"]
+bg_color = Color(0.827451, 0.36078432, 0.25882354, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjvx2"]
+bg_color = Color(0.827451, 0.36078432, 0.25882354, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjvx2"]
+atlas = ExtResource("3_3ie6y")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1h2q"]
+atlas = ExtResource("3_3ie6y")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ownjv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjvx2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1h2q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="HomeScreen" type="Node2D"]
+script = ExtResource("1_gi7ve")
+
+[node name="HomePage" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("1_iqt0l")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 500.0
+offset_top = 231.0
+offset_right = 580.0
+offset_bottom = 262.0
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("2_dki4i")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3ie6y")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iqt0l")
+text = "PLAY"
+
+[node name="Button2" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 412.0
+offset_top = 302.0
+offset_right = 612.0
+offset_bottom = 333.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_dki4i")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3ie6y")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dki4i")
+text = "INSTRUCTIONS"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 482.0
+offset_top = 380.0
+offset_right = 582.0
+offset_bottom = 411.0
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("2_dki4i")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3ie6y")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bjvx2")
+text = "LEVELS"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 369.0
+offset_top = 13.0
+offset_right = 493.0
+offset_bottom = 36.0
+scale = Vector2(3, 3)
+theme_override_fonts/font = ExtResource("2_dki4i")
+text = "Way Home"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(132, 340)
+scale = Vector2(8.28125, 8.28125)
+sprite_frames = SubResource("SpriteFrames_ownjv")
+frame_progress = 0.10119169
+speed_scale = 0.4
+script = ExtResource("4_l1h2q")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(1019, 341)
+scale = Vector2(8.28125, 8.28125)
+sprite_frames = SubResource("SpriteFrames_ownjv")
+frame_progress = 0.7090183
+speed_scale = 0.4
+script = ExtResource("4_bjvx2")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

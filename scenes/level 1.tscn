@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://1c3ccujmfkxr"]
+[gd_scene load_steps=72 format=3 uid="uid://1c3ccujmfkxr"]
 
 [ext_resource type="Script" uid="uid://43ou6a8lslhh" path="res://scripts/level_1.gd" id="1_2sj2h"]
 [ext_resource type="Texture2D" uid="uid://dis2ic1o3v5qv" path="res://images/Background.png" id="1_gthes"]
@@ -10,12 +10,21 @@
 [ext_resource type="PackedScene" uid="uid://c0jq8s8miyjcp" path="res://scenes/Npc.tscn" id="6_ow2ny"]
 [ext_resource type="Texture2D" uid="uid://pkeh4nap20t7" path="res://images/mossy block.png" id="6_p75kv"]
 [ext_resource type="Texture2D" uid="uid://brxt1qb38583k" path="res://images/TextBox.png" id="7_1uqwn"]
-[ext_resource type="Script" uid="uid://boivli2buha84" path="res://scenes/death_1.gd" id="8_hc45n"]
-[ext_resource type="FontFile" uid="uid://dcxnjbcfleqxp" path="res://fonts/Roboto_Mono/static/RobotoMono-Bold.ttf" id="9_dqu65"]
+[ext_resource type="Script" uid="uid://boivli2buha84" path="res://death_1.gd" id="8_hc45n"]
+[ext_resource type="Texture2D" uid="uid://cdwfk3a2robro" path="res://images/sign.png" id="8_u7ucq"]
+[ext_resource type="Texture2D" uid="uid://c5mon6j8nmuvs" path="res://images/Thorn Bush.png" id="9_r5fkv"]
+[ext_resource type="FontFile" uid="uid://c8uge3jdhs8qm" path="res://fonts/pixel_operator/PixelOperator8.ttf" id="9_xwfau"]
+[ext_resource type="Texture2D" uid="uid://c6v1xwv62mq7n" path="res://images/fence.png" id="10_8xr4j"]
 [ext_resource type="Texture2D" uid="uid://jew53giph7rq" path="res://images/Npc.png" id="10_bsmkr"]
 [ext_resource type="PackedScene" uid="uid://dn3tfembksmo" path="res://scenes/Arrow.tscn" id="10_gthes"]
+[ext_resource type="Script" uid="uid://jptandt5mysf" path="res://scripts/mole_touch_trigger.gd" id="10_mlye1"]
 [ext_resource type="PackedScene" uid="uid://lbytw35r30qf" path="res://scenes/MainCharacter.tscn" id="14_dov25"]
+[ext_resource type="Script" uid="uid://b7ehqu40duyu" path="res://scripts/thorn.gd" id="15_mopwt"]
+[ext_resource type="PackedScene" uid="uid://dcfhd5nha04vt" path="res://scenes/checkpoint.tscn" id="15_odcxm"]
+[ext_resource type="FontFile" uid="uid://crprgneoqco73" path="res://fonts/pixel_operator/PixelOperator8-Bold.ttf" id="15_r5fkv"]
 [ext_resource type="PackedScene" uid="uid://dhetw58730iq5" path="res://scenes/mole_1.tscn" id="16_m7v2g"]
+[ext_resource type="Script" uid="uid://e5fumukpqd8y" path="res://scripts/end_talk.gd" id="19_m5vsw"]
+[ext_resource type="Script" uid="uid://pjp745e5ok5x" path="res://scripts/checkpoint_touch.gd" id="20_odcxm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hc45n"]
 texture = ExtResource("3_3pdoh")
@@ -67,6 +76,22 @@ texture = ExtResource("4_kvult")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mopwt"]
+texture = ExtResource("8_u7ucq")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_odcxm"]
+texture = ExtResource("9_r5fkv")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m5vsw"]
+texture = ExtResource("10_8xr4j")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_gvhk2"]
 tile_size = Vector2i(32, 32)
 sources/1 = SubResource("TileSetAtlasSource_1uqwn")
@@ -74,15 +99,16 @@ sources/2 = SubResource("TileSetAtlasSource_2sj2h")
 sources/4 = SubResource("TileSetAtlasSource_dqu65")
 sources/0 = SubResource("TileSetAtlasSource_hc45n")
 sources/3 = SubResource("TileSetAtlasSource_m7v2g")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ow2ny"]
-size = Vector2(41, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hc45n"]
-size = Vector2(133, 20)
+sources/5 = SubResource("TileSetAtlasSource_mopwt")
+sources/6 = SubResource("TileSetAtlasSource_odcxm")
+sources/7 = SubResource("TileSetAtlasSource_m5vsw")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bsmkr"]
 size = Vector2(384, 5)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_8xr4j"]
+a = Vector2(-19, 0)
+b = Vector2(16, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mlye1"]
 size = Vector2(7, 32)
@@ -103,7 +129,7 @@ size = Vector2(32, 32)
 size = Vector2(64, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odcxm"]
-size = Vector2(1664, 1)
+size = Vector2(640, 2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3pdoh"]
 size = Vector2(321, 20)
@@ -124,13 +150,67 @@ size = Vector2(1, 160)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m7v2g"]
 size = Vector2(2, 33)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5vsw"]
+size = Vector2(33, 32)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_m7v2g"]
+a = Vector2(0.00018310547, 6.1035156e-05)
+b = Vector2(33, -33)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_m5vsw"]
+a = Vector2(0, -1)
+b = Vector2(17, -1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7nk2b"]
+size = Vector2(20, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bxejt"]
+size = Vector2(32, 32)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8xr4j"]
 size = Vector2(20, 86)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5vsw"]
-size = Vector2(32, 32)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_laj21"]
+size = Vector2(20, 126)
 
-[sub_resource type="Animation" id="Animation_p75kv"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygm7u"]
+size = Vector2(20, 94)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_mopwt"]
+b = Vector2(129, -127)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_laj21"]
+b = Vector2(96, -97)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uruw8"]
+size = Vector2(250, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbdnr"]
+size = Vector2(32, 129)
+
+[sub_resource type="GDScript" id="GDScript_laj21"]
+script/source = "extends Node2D
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4w6g1"]
+size = Vector2(328, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ow2ny"]
+size = Vector2(67, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08cb3"]
+size = Vector2(20, 86)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hc45n"]
+size = Vector2(133, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dov25"]
+size = Vector2(39, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h7jht"]
+size = Vector2(20, 74)
+
+[sub_resource type="Animation" id="Animation_mopwt"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -169,7 +249,7 @@ tracks/2/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_gthes"]
+[sub_resource type="Animation" id="Animation_r5fkv"]
 resource_name = "text_play"
 length = 3.5
 tracks/0/type = "value"
@@ -191,7 +271,7 @@ tracks/1/path = NodePath("Text:visible_ratio")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 2.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -209,10 +289,10 @@ tracks/2/keys = {
 "values": [true, false]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_m7v2g"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_odcxm"]
 _data = {
-&"RESET": SubResource("Animation_p75kv"),
-&"text_play": SubResource("Animation_gthes")
+&"RESET": SubResource("Animation_mopwt"),
+&"text_play": SubResource("Animation_r5fkv")
 }
 
 [node name="lvl1" type="Node2D"]
@@ -279,21 +359,9 @@ texture = ExtResource("1_gthes")
 position = Vector2(0, 8)
 tile_set = SubResource("TileSet_gvhk2")
 format = 2
-layer_0/tile_data = PackedInt32Array(1114148, 1, 0, 1114149, 1, 0, 1114150, 1, 0, 1114151, 1, 0, 1114152, 1, 0, 1114153, 1, 0, 1114154, 1, 0, 1114155, 1, 0, 1114156, 1, 0, 1114157, 1, 0, 1114158, 1, 0, 1114159, 1, 0, 1114160, 1, 0, 1114161, 1, 0, 1114162, 1, 0, 1114163, 1, 0, 1114164, 1, 0, 1114165, 1, 0, 1114166, 1, 0, 1114167, 1, 0, 1114168, 1, 0, 1114169, 1, 0, 1114170, 1, 0, 1114171, 1, 0, 1114172, 1, 0, 1114173, 1, 0, 1179684, 131073, 3, 1179685, 131073, 3, 1179686, 131073, 3, 1179687, 131073, 3, 1179688, 131073, 3, 1179689, 131073, 3, 1179690, 131073, 3, 1179691, 131073, 3, 1179692, 131073, 3, 1179693, 131073, 3, 1179694, 131073, 3, 1179695, 131073, 3, 1179696, 131073, 3, 1179697, 131073, 3, 1179698, 131073, 3, 1179699, 131073, 3, 1179700, 131073, 3, 1179701, 131073, 3, 1179702, 131073, 3, 1179703, 131073, 3, 1179704, 131073, 3, 1179705, 131073, 3, 1179706, 131073, 3, 1179707, 131073, 3, 1179708, 131073, 3, 1179709, 131073, 3, 1245220, 1, 4, 1245221, 1, 4, 1245222, 1, 4, 1245223, 1, 4, 1245224, 1, 4, 1245225, 1, 4, 1245226, 1, 3, 1245227, 1, 4, 1245228, 1, 4, 1245229, 1, 4, 1245230, 1, 4, 1245231, 1, 4, 1245232, 1, 4, 1245233, 1, 3, 1245234, 1, 4, 1245235, 1, 4, 1245236, 1, 4, 1245237, 1, 4, 1245238, 1, 4, 1245239, 1, 4, 1245240, 1, 3, 1245241, 1, 4, 1245242, 1, 4, 1245243, 1, 4, 1245244, 1, 4, 1245245, 1, 4, 1245247, 1, 3, 1245246, 1, 4, 1114175, 262145, 1, 1114174, 327681, 3, 1179711, 131073, 3, 1179710, 131073, 3, 1048638, 131073, 268435456, 983103, 131073, 268435456, 1114147, 1, 0, 1114146, 1, 0, 1114145, 1, 0, 1114144, 1, 0, 1114143, 1, 0, 1114142, 1, 0, 1114141, 1, 0, 1114140, 1, 0, 1114139, 1, 0, 1114138, 1, 0, 1114137, 1, 0, 1114136, 1, 0, 1114135, 1, 0, 1114134, 1, 0, 1114133, 1, 0, 1114132, 1, 0, 1114131, 1, 0, 1114130, 1, 0, 1114129, 1, 0, 1114128, 1, 0, 1114127, 1, 0, 1114126, 1, 0, 1114125, 1, 0, 1114124, 1, 0, 1114123, 1, 0, 1114122, 1, 0, 1114121, 262145, 4, 1114119, 262145, 4, 1114118, 262145, 4, 1114115, 1, 0, 1114114, 1, 0, 1114113, 1, 0, 1114112, 1, 0, 1179647, 1, 0, 1179646, 1, 0, 1179645, 1, 0, 1179644, 1, 0, 1179643, 1, 0, 1179642, 1, 0, 1179641, 1, 0, 1179640, 1, 0, 1179639, 1, 0, 1179663, 131073, 3, 1179662, 131073, 3, 1179661, 131073, 3, 1179660, 131073, 3, 1179659, 131073, 3, 1179658, 131073, 3, 1179651, 131073, 3, 1179650, 131073, 3, 1179649, 131073, 3, 1179648, 131073, 3, 1245183, 131073, 3, 1245182, 131073, 3, 1245181, 131073, 3, 1245180, 131073, 3, 1245179, 131073, 3, 1245178, 131073, 3, 1245177, 131073, 3, 1245176, 131073, 3, 1245175, 131073, 3, 1179664, 131073, 3, 1179665, 131073, 3, 1179666, 131073, 3, 1179667, 131073, 3, 1179668, 131073, 3, 1179669, 131073, 3, 1179670, 131073, 3, 1179671, 131073, 3, 1179672, 131073, 3, 1179673, 131073, 3, 1179674, 131073, 3, 1179675, 131073, 3, 1179676, 131073, 3, 1179677, 131073, 3, 1179678, 131073, 3, 1179679, 131073, 3, 1179680, 131073, 3, 1179681, 131073, 3, 1179682, 131073, 3, 1179683, 131073, 3, 1245219, 1, 3, 1245218, 1, 4, 1245217, 1, 4, 1245216, 1, 4, 1245215, 1, 4, 1245214, 1, 4, 1245213, 1, 4, 1245212, 1, 3, 1245211, 1, 4, 1245210, 1, 4, 1245209, 1, 4, 1245208, 1, 4, 1245207, 1, 4, 1245206, 1, 4, 1245205, 1, 3, 1245204, 1, 4, 1245203, 1, 4, 1245202, 1, 4, 1245201, 1, 4, 1245200, 1, 4, 1245199, 1, 4, 1245198, 1, 3, 1245197, 1, 4, 1245196, 1, 4, 1245195, 1, 4, 1245194, 1, 4, 1245193, 1, 4, 1245192, 1, 4, 1245191, 1, 3, 1245190, 1, 4, 1245189, 1, 4, 1245188, 1, 4, 1245187, 1, 4, 1245186, 1, 4, 1245185, 1, 4, 1245184, 1, 3, 1310719, 1, 4, 1310718, 1, 4, 1310717, 1, 4, 1310716, 1, 4, 1310715, 1, 4, 1310714, 1, 4, 1310713, 1, 3, 1310712, 1, 4, 1310711, 1, 4, 1048639, 131073, 4, 917569, 131073, 268435456, 852034, 131073, 268435456, 917570, 327681, 3, 852035, 1, 0, 917571, 262145, 1, 589893, 0, 0, 655429, 0, 0, 720965, 0, 0, 786501, 0, 0, 589894, 327681, 4, 655430, 327681, 4, 720966, 327681, 4, 786502, 327681, 4, 589895, 327681, 4, 655431, 327681, 4, 720967, 327681, 4, 786503, 327681, 4, 589896, 327681, 4, 655432, 327681, 4, 720968, 327681, 4, 786504, 327681, 4, 589897, 327681, 4, 655433, 327681, 4, 720969, 327681, 4, 786505, 327681, 4, 589898, 0, 0, 655434, 0, 0, 720970, 0, 0, 786506, 0, 0, 983105, 262145, 1, 983106, 131073, 3, 983107, 131073, 3, 852036, 1, 0, 852037, 1, 0, 852038, 1, 0, 852039, 1, 0, 852040, 1, 0, 852041, 1, 0, 852042, 1, 0, 852043, 1, 0, 852044, 1, 0, 1179652, 131073, 3, 1048587, 3, 0, 1048594, 3, 0)
-
-[node name="NpcTalk" type="Area2D" parent="."]
-script = ExtResource("5_kvult")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NpcTalk"]
-position = Vector2(-45.5, 542)
-shape = SubResource("RectangleShape2D_ow2ny")
-
-[node name="Death1" type="Area2D" parent="."]
-script = ExtResource("8_hc45n")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Death1"]
-position = Vector2(2114.5, 600)
-shape = SubResource("RectangleShape2D_hc45n")
+layer_0/tile_data = PackedInt32Array(1114151, 1, 0, 1114152, 1, 0, 1114153, 1, 0, 1114154, 1, 0, 1114155, 1, 0, 1114156, 1, 0, 1114157, 1, 0, 1114158, 1, 0, 1114159, 1, 0, 1114160, 1, 0, 1114161, 1, 0, 1114162, 1, 0, 1114163, 1, 0, 1114164, 1, 0, 1114165, 1, 0, 1114166, 1, 0, 1114167, 1, 0, 1114168, 1, 0, 1114169, 1, 0, 1114170, 1, 0, 1114171, 1, 0, 1114172, 1, 0, 1114173, 1, 0, 1179687, 131073, 3, 1179688, 131073, 3, 1179689, 131073, 3, 1179690, 131073, 3, 1179691, 131073, 3, 1179692, 131073, 3, 1179693, 131073, 3, 1179694, 131073, 3, 1179695, 131073, 3, 1179696, 131073, 3, 1179697, 131073, 3, 1179698, 131073, 3, 1179699, 131073, 3, 1179700, 131073, 3, 1179701, 131073, 3, 1179702, 131073, 3, 1179703, 131073, 3, 1179704, 131073, 3, 1179705, 131073, 3, 1179706, 131073, 3, 1179707, 131073, 3, 1179708, 131073, 3, 1179709, 131073, 3, 1245220, 1, 4, 1245221, 1, 4, 1245222, 1, 4, 1245223, 1, 4, 1245224, 1, 4, 1245225, 1, 4, 1245226, 1, 3, 1245227, 1, 4, 1245228, 1, 4, 1245229, 1, 4, 1245230, 1, 4, 1245231, 1, 4, 1245232, 1, 4, 1245233, 1, 3, 1245234, 1, 4, 1245235, 1, 4, 1245236, 1, 4, 1245237, 1, 4, 1245238, 1, 4, 1245239, 1, 4, 1245240, 1, 3, 1245241, 1, 4, 1245242, 1, 4, 1245243, 1, 4, 1245244, 1, 4, 1245245, 1, 4, 1245247, 1, 3, 1245246, 1, 4, 1114175, 262145, 1, 1114174, 327681, 3, 1179711, 131073, 3, 1179710, 131073, 3, 1048638, 131073, 268435456, 983103, 131073, 268435456, 1114140, 1, 0, 1114139, 1, 0, 1114138, 1, 0, 1114137, 1, 0, 1114136, 1, 0, 1114135, 1, 0, 1114134, 1, 0, 1114133, 1, 0, 1114132, 1, 0, 1114131, 1, 0, 1114130, 1, 0, 1114129, 1, 0, 1114128, 1, 0, 1114127, 1, 0, 1114126, 1, 0, 1114125, 1, 0, 1114124, 1, 0, 1114123, 1, 0, 1114122, 1, 0, 1114121, 262145, 4, 1114119, 262145, 4, 1114118, 262145, 4, 1114115, 1, 0, 1114114, 1, 0, 1114113, 1, 0, 1114112, 1, 0, 1179647, 1, 0, 1179646, 1, 0, 1179645, 1, 0, 1179644, 1, 0, 1179643, 1, 0, 1179642, 1, 0, 1179641, 1, 0, 1179640, 1, 0, 1179639, 1, 0, 1179663, 131073, 3, 1179662, 131073, 3, 1179661, 131073, 3, 1179660, 131073, 3, 1179659, 131073, 3, 1179658, 131073, 3, 1179651, 131073, 3, 1179650, 131073, 3, 1179649, 131073, 3, 1179648, 131073, 3, 1245183, 131073, 3, 1245182, 131073, 3, 1245181, 131073, 3, 1245180, 131073, 3, 1245179, 131073, 3, 1245178, 131073, 3, 1245177, 131073, 3, 1245176, 131073, 3, 1245175, 131073, 3, 1179664, 131073, 3, 1179665, 131073, 3, 1179666, 131073, 3, 1179667, 131073, 3, 1179668, 131073, 3, 1179669, 131073, 3, 1179670, 131073, 3, 1179671, 131073, 3, 1179672, 131073, 3, 1179673, 131073, 3, 1179674, 131073, 3, 1179675, 131073, 3, 1179676, 131073, 3, 1179677, 131073, 3, 1245219, 1, 3, 1245218, 1, 4, 1245217, 1, 4, 1245216, 1, 4, 1245215, 1, 4, 1245214, 1, 4, 1245213, 1, 4, 1245212, 1, 3, 1245211, 1, 4, 1245210, 1, 4, 1245209, 1, 4, 1245208, 1, 4, 1245207, 1, 4, 1245206, 1, 4, 1245205, 1, 3, 1245204, 1, 4, 1245203, 1, 4, 1245202, 1, 4, 1245201, 1, 4, 1245200, 1, 4, 1245199, 1, 4, 1245198, 1, 3, 1245197, 1, 4, 1245196, 1, 4, 1245195, 1, 4, 1245194, 1, 4, 1245193, 1, 4, 1245192, 1, 4, 1245191, 1, 3, 1245190, 1, 4, 1245189, 1, 4, 1245188, 1, 4, 1245187, 1, 4, 1245186, 1, 4, 1245185, 1, 4, 1245184, 1, 3, 1310719, 1, 4, 1310718, 1, 4, 1310717, 1, 4, 1310716, 1, 4, 1310715, 1, 4, 1310714, 1, 4, 1310713, 1, 3, 1310712, 1, 4, 1310711, 1, 4, 1048639, 131073, 4, 917569, 131073, 268435456, 852034, 131073, 268435456, 917570, 327681, 3, 852035, 1, 0, 917571, 262145, 1, 589893, 0, 0, 655429, 0, 0, 720965, 0, 0, 786501, 0, 0, 589894, 327681, 4, 655430, 327681, 4, 720966, 327681, 4, 786502, 327681, 4, 589895, 327681, 4, 655431, 327681, 4, 720967, 327681, 4, 786503, 327681, 4, 589896, 327681, 4, 655432, 327681, 4, 720968, 327681, 4, 786504, 327681, 4, 589897, 327681, 4, 655433, 327681, 4, 720969, 327681, 4, 786505, 327681, 4, 589898, 0, 0, 655434, 0, 0, 720970, 0, 0, 786506, 0, 0, 983105, 262145, 1, 983106, 131073, 3, 983107, 131073, 3, 852036, 1, 0, 852037, 1, 0, 852038, 1, 0, 852039, 1, 0, 852040, 1, 0, 852041, 1, 0, 852042, 1, 0, 852043, 1, 0, 852044, 1, 0, 1179652, 131073, 3, 1376247, 1, 805306372, 1376248, 1, 805306372, 1376249, 1, 805306372, 1376250, 1, 805306372, 1376251, 1, 805306372, 1376252, 1, 805306372, 1376253, 1, 805306372, 1376254, 1, 805306372, 1376255, 1, 805306372, 1310720, 1, 805306372, 1310721, 1, 805306372, 1310722, 1, 805306372, 1310723, 1, 805306372, 1310724, 1, 805306372, 1310725, 1, 805306372, 1310726, 1, 805306372, 1310727, 1, 805306372, 1310728, 1, 805306372, 1310729, 1, 805306372, 1310730, 1, 805306372, 1310731, 1, 805306372, 1310732, 1, 805306372, 1310733, 1, 805306372, 1310734, 1, 805306372, 1310735, 1, 805306372, 1310736, 1, 805306372, 1310737, 1, 805306372, 1310738, 1, 805306372, 1310739, 1, 805306372, 1310740, 1, 805306372, 1310741, 1, 805306372, 1310742, 1, 805306372, 1310743, 1, 805306372, 1310744, 1, 805306372, 1310745, 1, 805306372, 1310746, 1, 805306372, 1310747, 1, 805306372, 1310748, 1, 805306372, 1310749, 1, 805306372, 1310750, 1, 805306372, 1310751, 1, 805306372, 1310752, 1, 805306372, 1310753, 1, 805306372, 1310754, 1, 805306372, 1310755, 1, 805306372, 1310756, 1, 805306372, 1310757, 1, 805306372, 1310758, 1, 805306372, 1310759, 1, 805306372, 1310760, 1, 805306372, 1310761, 1, 805306372, 1310762, 1, 805306372, 1310763, 1, 805306372, 1310764, 1, 805306372, 1310765, 1, 805306372, 1310766, 1, 805306372, 1310767, 1, 805306372, 1310768, 1, 805306372, 1310769, 1, 805306372, 1310770, 1, 805306372, 1310771, 1, 805306372, 1310772, 1, 805306372, 1310773, 1, 805306372, 1310774, 1, 805306372, 1310775, 1, 805306372, 1310776, 1, 805306372, 1310777, 1, 805306372, 1310778, 1, 805306372, 1310779, 1, 805306372, 1310780, 1, 805306372, 1310781, 1, 805306372, 1310782, 1, 805306372, 1310783, 1, 805306372, 1048598, 3, 0, 1048591, 3, 0, 1048590, 131073, 268435456, 1048599, 131073, 0, 1048589, 5, 0, 1179678, 131073, 3, 1179679, 131073, 3, 1179680, 131073, 3, 1179681, 131073, 3, 1179682, 131073, 3, 1179683, 131073, 3, 1179684, 131073, 3, 1179685, 131073, 3, 1179686, 131073, 3, 1048606, 327681, 4, 1048608, 327681, 4, 1048611, 327681, 4, 1048613, 327681, 4, 1048603, 5, 268435456, 1048618, 131073, 268435456, 983083, 131073, 268435456, 917548, 131073, 268435456, 852013, 131073, 268435456, 852014, 1, 0, 852015, 1, 0, 852016, 1, 0, 852017, 1, 0, 852018, 1, 0, 852019, 1, 0, 852020, 1, 0, 852021, 327681, 0, 1048619, 327681, 3, 917549, 262145, 3, 983084, 131073, 1, 1048620, 262145, 1, 1048621, 131073, 536870912, 983085, 262145, 0, 917550, 262145, 0, 917551, 131073, 536870912, 983086, 131073, 536870912, 786508, 7, 0, 1114107, 7, 0, 1114106, 7, 0, 1114105, 7, 0, 1114104, 7, 0, 1114103, 7, 0, 1114108, 7, 0)
+layer_1/name = "Layer1"
+layer_1/tile_data = PackedInt32Array(1179678, 6, 0, 1179679, 6, 0, 1179680, 6, 0, 1179681, 6, 0, 1179682, 6, 0, 1179683, 6, 0, 1179684, 6, 0, 1179685, 6, 0, 1179677, 6, 0, 1179686, 6, 0)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 8)
@@ -301,6 +369,10 @@ position = Vector2(0, 8)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-64, 546.5)
 shape = SubResource("RectangleShape2D_bsmkr")
+
+[node name="CollisionShape2D30" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1267, 544)
+shape = SubResource("SegmentShape2D_8xr4j")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(124.5, 560)
@@ -327,7 +399,7 @@ position = Vector2(224, 560)
 shape = SubResource("RectangleShape2D_mopwt")
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1152, 544.5)
+position = Vector2(608, 545)
 shape = SubResource("RectangleShape2D_odcxm")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
@@ -341,7 +413,7 @@ scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("SegmentShape2D_hc45n")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-105, 496.25)
+position = Vector2(-104, 496.25)
 shape = SubResource("RectangleShape2D_1uqwn")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
@@ -358,38 +430,215 @@ shape = SubResource("RectangleShape2D_gthes")
 position = Vector2(2081, 495.5)
 shape = SubResource("RectangleShape2D_m7v2g")
 
-[node name="blocker1" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(118, 501)
-shape = SubResource("RectangleShape2D_8xr4j")
-
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(368, 528)
+position = Vector2(496, 528)
 shape = SubResource("RectangleShape2D_m5vsw")
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(592, 528)
+position = Vector2(720.5, 528)
 shape = SubResource("RectangleShape2D_m5vsw")
 
-[node name="NPC" parent="." instance=ExtResource("6_ow2ny")]
-position = Vector2(-75, 541)
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(448, 546)
+shape = SubResource("SegmentShape2D_m7v2g")
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(735, 513)
+rotation = 1.571741
+shape = SubResource("SegmentShape2D_m7v2g")
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1596.5, 544)
+shape = SubResource("RectangleShape2D_odcxm")
+
+[node name="CollisionShape2D28" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1649.5, 544)
+shape = SubResource("RectangleShape2D_odcxm")
+
+[node name="CollisionShape2D32" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1969, 545.5)
+shape = SubResource("SegmentShape2D_m5vsw")
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(918, 576)
+shape = SubResource("RectangleShape2D_7nk2b")
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1258, 576)
+shape = SubResource("RectangleShape2D_7nk2b")
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(976, 528)
+shape = SubResource("RectangleShape2D_bxejt")
+
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1040, 528)
+shape = SubResource("RectangleShape2D_bxejt")
+
+[node name="CollisionShape2D24" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1136, 528)
+shape = SubResource("RectangleShape2D_bxejt")
+
+[node name="CollisionShape2D25" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1200, 528)
+shape = SubResource("RectangleShape2D_bxejt")
+
+[node name="blocker1" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(90, 501)
+shape = SubResource("RectangleShape2D_8xr4j")
+
+[node name="blocker 2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(732, 449)
+shape = SubResource("RectangleShape2D_laj21")
+
+[node name="blocker 3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(366, 497)
+shape = SubResource("RectangleShape2D_ygm7u")
+
+[node name="CollisionShape2D26" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1344, 544)
+shape = SubResource("SegmentShape2D_mopwt")
+
+[node name="CollisionShape2D31" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1441, 543)
+shape = SubResource("SegmentShape2D_laj21")
+
+[node name="CollisionShape2D27" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1597, 426)
+shape = SubResource("RectangleShape2D_uruw8")
+
+[node name="CollisionShape2D29" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2448, 351.5)
+shape = SubResource("RectangleShape2D_qbdnr")
+
+[node name="SpriteAnimations" type="Node2D" parent="."]
+
+[node name="NPC" parent="SpriteAnimations" instance=ExtResource("6_ow2ny")]
+position = Vector2(-89.99999, 541)
 scale = Vector2(1.1, 1.1)
 
-[node name="Arrow" parent="." instance=ExtResource("10_gthes")]
-position = Vector2(98, 533)
+[node name="Arrow" parent="SpriteAnimations" instance=ExtResource("10_gthes")]
+position = Vector2(70, 533)
 
-[node name="Coworker" type="Label" parent="."]
-offset_left = -100.0
+[node name="Arrow2" parent="SpriteAnimations" instance=ExtResource("10_gthes")]
+position = Vector2(397.99997, 528.99994)
+rotation = -0.3602393
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Arrow3" parent="SpriteAnimations" instance=ExtResource("10_gthes")]
+position = Vector2(1338, 528)
+rotation = -0.48869222
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Mole1" parent="SpriteAnimations" instance=ExtResource("16_m7v2g")]
+position = Vector2(526, 538)
+point_a = Vector2(526, 538)
+point_b = Vector2(690, 538)
+
+[node name="Arrow4" parent="SpriteAnimations" instance=ExtResource("10_gthes")]
+position = Vector2(1698, 406)
+rotation = 0.122173056
+
+[node name="Checkpoint" parent="SpriteAnimations" instance=ExtResource("15_odcxm")]
+position = Vector2(1572, 408)
+
+[node name="NPC2" parent="SpriteAnimations" instance=ExtResource("6_ow2ny")]
+position = Vector2(2329, 414)
+script = SubResource("GDScript_laj21")
+
+[node name="Arrow5" parent="SpriteAnimations" instance=ExtResource("10_gthes")]
+position = Vector2(2074, 423.99994)
+rotation = -0.3577925
+
+[node name="Labels" type="Node2D" parent="."]
+
+[node name="Mole Beware" type="Label" parent="Labels"]
+offset_left = 428.0
+offset_top = 525.0
+offset_right = 464.0
+offset_bottom = 555.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("9_xwfau")
+theme_override_font_sizes/font_size = 8
+text = "Beware of Mole"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Thorn Beware" type="Label" parent="Labels"]
+offset_left = 871.0
+offset_top = 524.0
+offset_right = 907.0
+offset_bottom = 554.0
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("9_xwfau")
+theme_override_font_sizes/font_size = 8
+text = "Beware of Thorns"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Coworker" type="Label" parent="Labels"]
+offset_left = -119.0
 offset_top = 513.0
-offset_right = -25.0
-offset_bottom = 536.0
-theme_override_font_sizes/font_size = 11
+offset_right = -54.0
+offset_bottom = 523.0
+theme_override_fonts/font = ExtResource("15_r5fkv")
+theme_override_font_sizes/font_size = 8
 text = "Coworker"
 
-[node name="Mole1" parent="." instance=ExtResource("16_m7v2g")]
-position = Vector2(562, 537)
+[node name="Label" type="Label" parent="Labels"]
+offset_left = 1541.0001
+offset_top = 387.00003
+offset_right = 1618.0001
+offset_bottom = 395.00003
+scale = Vector2(0.8, 0.8)
+theme_override_fonts/font = ExtResource("15_r5fkv")
+theme_override_font_sizes/font_size = 8
+text = "Checkpoint"
+
+[node name="Thorn" type="Area2D" parent="."]
+script = ExtResource("15_mopwt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Thorn"]
+position = Vector2(1085, 613)
+shape = SubResource("RectangleShape2D_4w6g1")
+
+[node name="NpcTalk" type="Area2D" parent="."]
+script = ExtResource("5_kvult")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NpcTalk"]
+position = Vector2(-35.5, 533)
+shape = SubResource("RectangleShape2D_ow2ny")
+
+[node name="EndTalk" type="Area2D" parent="."]
+script = ExtResource("19_m5vsw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndTalk"]
+position = Vector2(2251, 380)
+shape = SubResource("RectangleShape2D_08cb3")
+
+[node name="Death1" type="Area2D" parent="."]
+script = ExtResource("8_hc45n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Death1"]
+position = Vector2(2114.5, 600)
+shape = SubResource("RectangleShape2D_hc45n")
+
+[node name="MoleTouchTrigger" type="Area2D" parent="."]
+script = ExtResource("10_mlye1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MoleTouchTrigger"]
+position = Vector2(475.5, 516)
+shape = SubResource("RectangleShape2D_dov25")
+
+[node name="CheckpointTouch" type="Area2D" parent="."]
+script = ExtResource("20_odcxm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckpointTouch"]
+position = Vector2(1268, 515)
+shape = SubResource("RectangleShape2D_h7jht")
 
 [node name="Player" parent="." instance=ExtResource("14_dov25")]
-position = Vector2(64, 518)
+position = Vector2(36, 518)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(3, 3)
@@ -401,22 +650,24 @@ texture = ExtResource("7_1uqwn")
 
 [node name="Text" type="Label" parent="Player"]
 offset_left = -89.0
-offset_top = 63.0
+offset_top = 68.0
 offset_right = 58.0
-offset_bottom = 99.0
-theme_override_fonts/font = ExtResource("9_dqu65")
-theme_override_font_sizes/font_size = 13
+offset_bottom = 104.0
+theme_override_fonts/font = ExtResource("9_xwfau")
+theme_override_font_sizes/font_size = 8
 horizontal_alignment = 1
 autowrap_mode = 2
 visible_characters = 0
 visible_ratio = 0.0
 
 [node name="Namelabel" type="Label" parent="Player"]
-offset_left = -94.0
-offset_top = 40.0
-offset_right = -34.0
-offset_bottom = 63.0
-theme_override_font_sizes/font_size = 10
+offset_left = -92.99999
+offset_top = 43.0
+offset_right = -2.9999924
+offset_bottom = 66.0
+scale = Vector2(0.65, 0.65)
+theme_override_fonts/font = ExtResource("15_r5fkv")
+theme_override_font_sizes/font_size = 8
 text = "Instructions"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -428,10 +679,18 @@ texture = ExtResource("10_bsmkr")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
 libraries = {
-&"": SubResource("AnimationLibrary_m7v2g")
+&"": SubResource("AnimationLibrary_odcxm")
 }
 
+[connection signal="body_entered" from="Thorn" to="Thorn" method="_on_body_entered"]
+[connection signal="body_exited" from="Thorn" to="Thorn" method="_on_body_exited"]
 [connection signal="body_entered" from="NpcTalk" to="NpcTalk" method="_on_body_entered"]
 [connection signal="body_exited" from="NpcTalk" to="NpcTalk" method="_on_body_exited"]
+[connection signal="body_entered" from="EndTalk" to="EndTalk" method="_on_body_entered"]
+[connection signal="body_exited" from="EndTalk" to="EndTalk" method="_on_body_exited"]
 [connection signal="body_entered" from="Death1" to="Death1" method="_on_body_entered"]
 [connection signal="body_exited" from="Death1" to="Death1" method="_on_body_exited"]
+[connection signal="body_entered" from="MoleTouchTrigger" to="MoleTouchTrigger" method="_on_body_entered"]
+[connection signal="body_exited" from="MoleTouchTrigger" to="MoleTouchTrigger" method="_on_body_exited"]
+[connection signal="body_entered" from="CheckpointTouch" to="CheckpointTouch" method="_on_body_entered"]
+[connection signal="body_exited" from="CheckpointTouch" to="CheckpointTouch" method="_on_body_exited"]

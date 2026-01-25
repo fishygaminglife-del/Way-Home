@@ -5,6 +5,7 @@ const SPEED = 150.0
 const JUMP_VELOCITY = -250
 
 
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -24,3 +25,11 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		$AnimatedSprite2D.play("idle")
 	move_and_slide()
+func die():
+	if GameState.has_checkpoint:
+		global_position = GameState.current_checkpoint_position
+		velocity = Vector2.ZERO
+		print("Respawning at: ", GameState.current_checkpoint_position)
+
+	else:
+		global_position = Vector2(36, 518)

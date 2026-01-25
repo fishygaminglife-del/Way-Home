@@ -28,6 +28,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	body.get_node("TextBox").visible = true
 	body.get_node("AnimationPlayer").play("text_play")
 	await body.get_node("AnimationPlayer").animation_finished
+	$"../../StaticBody2D/blocker 2".disabled = true
 	body.get_node("Text").visible = false
 	body.get_node("Namelabel").visible = false
 	body.get_node("TextBox").visible = false

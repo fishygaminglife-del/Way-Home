@@ -1,0 +1,85 @@
+[gd_scene load_steps=10 format=3 uid="uid://p4a0bm181ml0"]
+
+[ext_resource type="Script" uid="uid://cc2yll5qd0kis" path="res://scripts/LevelPick.gd" id="1_lpkg1"]
+[ext_resource type="Texture2D" uid="uid://bmbvh688lukpf" path="res://images/PageScenes.png" id="1_y8gwd"]
+[ext_resource type="FontFile" uid="uid://crprgneoqco73" path="res://fonts/pixel_operator/PixelOperator8-Bold.ttf" id="2_lpkg1"]
+[ext_resource type="Texture2D" uid="uid://d1ym4octx17t8" path="res://images/homebutton.png" id="3_n4611"]
+[ext_resource type="Texture2D" uid="uid://bp7qwyqn2qvwk" path="res://images/Check.png" id="5_n4611"]
+[ext_resource type="Script" uid="uid://beffonu32c2bt" path="res://scripts/lvl_3_buttton.gd" id="5_vle45"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vle45"]
+bg_color = Color(0.64692545, 0.33359468, 0.15459546, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bevc7"]
+bg_color = Color(0.64705884, 0.33333334, 0.15294118, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1sa1m"]
+bg_color = Color(0.64705884, 0.33333334, 0.15294118, 1)
+
+[node name="LevelScene" type="Node2D"]
+script = ExtResource("1_lpkg1")
+
+[node name="PageScenes" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("1_y8gwd")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 177.99998
+offset_top = 70.00006
+offset_right = 556.5715
+offset_bottom = 86.00006
+scale = Vector2(2.1, 2.1)
+theme_override_fonts/font = ExtResource("2_lpkg1")
+text = "LEVELS"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="HomeButton" type="Button" parent="."]
+offset_left = 1068.0
+offset_top = 22.0
+offset_right = 1108.0
+offset_bottom = 62.0
+scale = Vector2(1.5, 1.5)
+icon = ExtResource("3_n4611")
+metadata/_edit_use_anchors_ = true
+
+[node name="TutButton" type="Button" parent="."]
+offset_left = 274.0
+offset_top = 214.0
+offset_right = 305.0
+offset_bottom = 245.0
+scale = Vector2(1.5, 1.5)
+theme_override_styles/normal = SubResource("StyleBoxFlat_vle45")
+text = "1"
+metadata/_edit_use_anchors_ = true
+
+[node name="Lvl2Button" type="Button" parent="."]
+offset_left = 545.0
+offset_top = 214.0
+offset_right = 576.0
+offset_bottom = 245.0
+scale = Vector2(1.5, 1.5)
+theme_override_styles/normal = SubResource("StyleBoxFlat_bevc7")
+text = "2"
+metadata/_edit_use_anchors_ = true
+
+[node name="Lvl3Buttton" type="Button" parent="."]
+offset_left = 831.0
+offset_top = 214.0
+offset_right = 862.0
+offset_bottom = 245.0
+scale = Vector2(1.5, 1.5)
+theme_override_styles/normal = SubResource("StyleBoxFlat_1sa1m")
+text = "3"
+script = ExtResource("5_vle45")
+metadata/_edit_use_anchors_ = true
+
+[node name="Check" type="Sprite2D" parent="."]
+position = Vector2(317, 234.99998)
+scale = Vector2(1.78125, 1.78125)
+texture = ExtResource("5_n4611")
+
+[connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]
+[connection signal="pressed" from="TutButton" to="." method="_on_tut_button_pressed"]
+[connection signal="pressed" from="Lvl2Button" to="." method="_on_lvl_2_button_pressed"]

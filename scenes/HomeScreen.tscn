@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://bkhvv37ovsxm"]
+[gd_scene load_steps=15 format=3 uid="uid://bkhvv37ovsxm"]
 
 [ext_resource type="Script" uid="uid://bvoovga4fls6x" path="res://scripts/home_screen.gd" id="1_gi7ve"]
 [ext_resource type="Texture2D" uid="uid://24j8a6c3k7ek" path="res://images/HomePage.png" id="1_iqt0l"]
 [ext_resource type="FontFile" uid="uid://crprgneoqco73" path="res://fonts/pixel_operator/PixelOperator8-Bold.ttf" id="2_dki4i"]
 [ext_resource type="Texture2D" uid="uid://bjr7r5s64fmma" path="res://SpriteFrames/idle character.png" id="3_3ie6y"]
 [ext_resource type="Script" uid="uid://c3p8nhjxsujc1" path="res://scripts/PlayerFlip.gd" id="4_bjvx2"]
+[ext_resource type="Script" uid="uid://dstkbkph7ftxw" path="res://scripts/button_3.gd" id="4_gi7ve"]
 [ext_resource type="Script" uid="uid://dp8bcmt1ys2b7" path="res://scripts/PlayerHome.gd" id="4_l1h2q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ie6y"]
@@ -89,6 +90,7 @@ theme_override_fonts/font = ExtResource("2_dki4i")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3ie6y")
 theme_override_styles/hover = SubResource("StyleBoxFlat_bjvx2")
 text = "LEVELS"
+script = ExtResource("4_gi7ve")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 369.0
@@ -117,3 +119,4 @@ script = ExtResource("4_bjvx2")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

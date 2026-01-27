@@ -5,7 +5,6 @@ var has_touched = 0
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") and has_touched == 0:
-		$CollisionShape2D.disabled = true
 		has_touched = 1
 		body.get_node("TextBox").visible = true
 		body.get_node("Text").text = "Make contact with the mole."

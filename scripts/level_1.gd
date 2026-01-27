@@ -6,7 +6,7 @@ func _ready() -> void:
 	$NpcTalk/CollisionShape2D.disabled = true
 	$SpriteAnimations/Arrow2.visible = false 
 	$StaticBody2D/blocker1.disabled = false
-	$"StaticBody2D/blocker 2".disabled = false
+
 	$SpriteAnimations/Arrow.visible = false
 	$Player/TextBox.visible = false
 	$Player/Text.visible = false

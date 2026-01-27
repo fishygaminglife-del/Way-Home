@@ -14,10 +14,11 @@ func _on_body_entered(body: Node2D) -> void:
 		body.get_node("Text").visible = false
 		body.get_node("Namelabel").visible = false
 		body.get_node("Npc").visible = false
-		finish_scene()
+		finish_scene2()
 		
-func finish_scene():
+func finish_scene2():
 	Global.button_unlocked = true
+	Global.check2 = true
 	get_tree().change_scene_to_file("res://scenes/LevelScene.tscn")
 
 func _on_body_exited(body: Node2D) -> void:

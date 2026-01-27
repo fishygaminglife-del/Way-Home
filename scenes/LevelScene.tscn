@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://p4a0bm181ml0"]
+[gd_scene load_steps=11 format=3 uid="uid://p4a0bm181ml0"]
 
 [ext_resource type="Script" uid="uid://cc2yll5qd0kis" path="res://scripts/LevelPick.gd" id="1_lpkg1"]
 [ext_resource type="Texture2D" uid="uid://bmbvh688lukpf" path="res://images/PageScenes.png" id="1_y8gwd"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d1ym4octx17t8" path="res://images/homebutton.png" id="3_n4611"]
 [ext_resource type="Texture2D" uid="uid://bp7qwyqn2qvwk" path="res://images/Check.png" id="5_n4611"]
 [ext_resource type="Script" uid="uid://beffonu32c2bt" path="res://scripts/lvl_3_buttton.gd" id="5_vle45"]
+[ext_resource type="Script" uid="uid://be684nvbg3u7w" path="res://scripts/check_2.gd" id="7_bevc7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vle45"]
 bg_color = Color(0.64692545, 0.33359468, 0.15459546, 1)
@@ -79,6 +80,12 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(317, 234.99998)
 scale = Vector2(1.78125, 1.78125)
 texture = ExtResource("5_n4611")
+
+[node name="Check2" type="Sprite2D" parent="."]
+position = Vector2(589, 235)
+scale = Vector2(1.78125, 1.78125)
+texture = ExtResource("5_n4611")
+script = ExtResource("7_bevc7")
 
 [connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]
 [connection signal="pressed" from="TutButton" to="." method="_on_tut_button_pressed"]

@@ -15,6 +15,7 @@ func _on_body_entered(body: Node2D) -> void:
 		body.get_node("AnimationPlayer").play("text_play")
 		await body.get_node("AnimationPlayer").animation_finished
 		body.get_node("Text").text = "You have so many journeys waiting..."
+		body.get_node("TextBox").visible = true
 		body.get_node("AnimationPlayer").play("text_play")
 		await body.get_node("AnimationPlayer").animation_finished
 		body.get_node("TextBox").visible = false

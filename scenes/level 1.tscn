@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c0jq8s8miyjcp" path="res://scenes/Npc.tscn" id="6_ow2ny"]
 [ext_resource type="Texture2D" uid="uid://pkeh4nap20t7" path="res://images/mossy block.png" id="6_p75kv"]
 [ext_resource type="Texture2D" uid="uid://brxt1qb38583k" path="res://images/TextBox.png" id="7_1uqwn"]
-[ext_resource type="Script" uid="uid://boivli2buha84" path="res://death_1.gd" id="8_hc45n"]
+[ext_resource type="Script" uid="uid://boivli2buha84" path="res://scripts/death_1.gd" id="8_hc45n"]
 [ext_resource type="Texture2D" uid="uid://cdwfk3a2robro" path="res://images/sign.png" id="8_u7ucq"]
 [ext_resource type="Texture2D" uid="uid://c5mon6j8nmuvs" path="res://images/Thorn Bush.png" id="9_r5fkv"]
 [ext_resource type="FontFile" uid="uid://c8uge3jdhs8qm" path="res://fonts/pixel_operator/PixelOperator8.ttf" id="9_xwfau"]

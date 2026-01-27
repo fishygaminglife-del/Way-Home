@@ -1,7 +1,7 @@
 extends Node2D
 
 func _ready() -> void:
-	#$Player.global_position  = Vector2(1472, 408)
+
 	$SpriteAnimations/Arrow3.visible = false
 	$NpcTalk/CollisionShape2D.disabled = true
 	$SpriteAnimations/Arrow2.visible = false 

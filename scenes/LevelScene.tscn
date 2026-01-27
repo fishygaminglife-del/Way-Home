@@ -90,3 +90,4 @@ script = ExtResource("7_bevc7")
 [connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]
 [connection signal="pressed" from="TutButton" to="." method="_on_tut_button_pressed"]
 [connection signal="pressed" from="Lvl2Button" to="." method="_on_lvl_2_button_pressed"]
+[connection signal="pressed" from="Lvl3Buttton" to="." method="_on_lvl_3_buttton_pressed"]

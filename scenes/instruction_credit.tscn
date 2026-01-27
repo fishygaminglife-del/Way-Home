@@ -32,16 +32,16 @@ scale = Vector2(2, 2)
 theme_override_constants/line_spacing = 5
 theme_override_fonts/font = ExtResource("3_chvnd")
 theme_override_font_sizes/font_size = 8
-text = "Welcome to Way Home. In this game your goal is to travel from work to home. Passing through obstacles, and with the guidence of your coworker, you can get home. Using arrow keys to move the character around. Find your Way Home!"
+text = "Welcome to Way Home. In this game your goal is to travel from work to home. Passing through obstacles, and with the guidence of your coworker, you can get home. Using arrow keys to move the character around. Level 3 is the best!!! Find your Way Home!"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="CreditTitle" type="Label" parent="."]
 offset_left = 178.0
-offset_top = 312.0
+offset_top = 277.0
 offset_right = 575.5
-offset_bottom = 335.0
+offset_bottom = 300.0
 scale = Vector2(2, 2)
 theme_override_fonts/font = ExtResource("2_axg17")
 text = "CREDIT"
@@ -49,15 +49,15 @@ horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="CreditTxt" type="Label" parent="."]
-offset_left = 205.0
-offset_top = 368.0
-offset_right = 588.0
-offset_bottom = 397.0
+offset_left = 177.0
+offset_top = 325.0
+offset_right = 575.0
+offset_bottom = 377.0
 scale = Vector2(2, 2)
 theme_override_constants/line_spacing = 5
 theme_override_fonts/font = ExtResource("3_chvnd")
 theme_override_font_sizes/font_size = 8
-text = "All grapics and art made by Fishyyyyyyy (Me)"
+text = "All grapics and art made by Fishyyyyyyy (Me), Google Fonts Pixel Operator, Audio from Mark Ronson Feat Bruno Mars: UpTownFunk"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2

@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://n811kydopb"]
+
+[ext_resource type="Texture2D" uid="uid://cwgru6nfb588y" path="res://images/ConGratScewne.png" id="1_qixq0"]
+[ext_resource type="FontFile" uid="uid://crprgneoqco73" path="res://fonts/pixel_operator/PixelOperator8-Bold.ttf" id="2_wnxaw"]
+[ext_resource type="Texture2D" uid="uid://d1ym4octx17t8" path="res://images/homebutton.png" id="3_fcrmx"]
+[ext_resource type="Script" uid="uid://gi0hkobhfyxf" path="res://scripts/button_congrat.gd" id="4_pf2wv"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ConGratScewne" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("1_qixq0")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 252.0
+offset_top = 21.0
+offset_right = 514.0
+offset_bottom = 44.0
+scale = Vector2(2.3, 2.3)
+theme_override_fonts/font = ExtResource("2_wnxaw")
+text = "You Beat WAY HOME!"
+
+[node name="ButtonCongrat" type="Button" parent="."]
+offset_left = 1037.0
+offset_top = 19.000002
+offset_right = 1077.0
+offset_bottom = 59.0
+scale = Vector2(1.5, 1.5)
+icon = ExtResource("3_fcrmx")
+script = ExtResource("4_pf2wv")
+
+[connection signal="pressed" from="ButtonCongrat" to="ButtonCongrat" method="_on_pressed"]

@@ -72,6 +72,7 @@ func _on_big_boulder_fall_body_entered(body: Node2D) -> void:
 func meet_james():
 		$Player/Text.text = "Hey, I'm James, be carefull, this path is very dangerous"
 		$Player/Namelabel.text = "James"
+		$Player/TextBox.visible = true
 		$Player/AnimationPlayer.play("text_play")
 		await $Player/AnimationPlayer.animation_finished
 		$Player/Text.visible = false

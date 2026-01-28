@@ -20,28 +20,30 @@ func _ready() -> void:
 
 func _on_fire_starter_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
+		$FireStarter/FireStarterCollision.disabled = true
 		$Grasas.visible = false
 		$Grasas2.visible = false
 		$Grasas3.visible = false
 		$Grasas4.visible = false
 		$Grasas5.visible = false
 		$Grasas6.visible = false
+		await get_tree().create_timer(1).timeout
 		$AnimationPlayer5.play("firerun")
-		await get_tree().create_timer(0.2).timeout
+		await get_tree().create_timer(0.3).timeout
 		$AnimatedSprite2D.visible = true
-		await get_tree().create_timer(0.2).timeout
+		await get_tree().create_timer(0.3).timeout
 		$AnimatedSprite2D4.visible = true
-		await get_tree().create_timer(0.2).timeout
+		await get_tree().create_timer(0.3).timeout
 		$AnimatedSprite2D3.visible = true
-		await get_tree().create_timer(0.2).timeout
+		await get_tree().create_timer(0.3).timeout
 		$AnimatedSprite2D2.visible = true
-		await get_tree().create_timer(0.2).timeout
+		await get_tree().create_timer(0.3).timeout
 		$AnimatedSprite2D5.visible = true
-		await get_tree().create_timer(0.2).timeout
+		await get_tree().create_timer(0.3).timeout
 		$AnimatedSprite2D8.visible = true
-		await get_tree().create_timer(0.2).timeout
+		await get_tree().create_timer(0.3).timeout
 		$AnimatedSprite2D7.visible = true
-		await get_tree().create_timer(0.2).timeout
+		await get_tree().create_timer(0.3).timeout
 		$AnimatedSprite2D6.visible = true
 	
 

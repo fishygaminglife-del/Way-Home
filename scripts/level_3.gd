@@ -5,6 +5,7 @@ var end_talk3 = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.hearts_remain3  = 4
+	$Player/CoinLabel2.text = str(Global.coins)
 	$Player/PlayBut.visible = false
 	$Player/PlayBut.disabled = true
 	$Player/Node2D/HomePage.visible = false

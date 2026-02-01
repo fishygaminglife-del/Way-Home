@@ -1,17 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://n811kydopb"]
+[gd_scene format=3 uid="uid://n811kydopb"]
 
+[ext_resource type="Script" uid="uid://b1xnt4rxqbqsx" path="res://scripts/last_celebrate.gd" id="1_pf2wv"]
 [ext_resource type="Texture2D" uid="uid://cwgru6nfb588y" path="res://images/ConGratScewne.png" id="1_qixq0"]
 [ext_resource type="FontFile" uid="uid://crprgneoqco73" path="res://fonts/pixel_operator/PixelOperator8-Bold.ttf" id="2_wnxaw"]
 [ext_resource type="Texture2D" uid="uid://d1ym4octx17t8" path="res://images/homebutton.png" id="3_fcrmx"]
 [ext_resource type="Script" uid="uid://gi0hkobhfyxf" path="res://scripts/button_congrat.gd" id="4_pf2wv"]
+[ext_resource type="FontFile" uid="uid://c8uge3jdhs8qm" path="res://fonts/pixel_operator/PixelOperator8.ttf" id="6_5m62c"]
+[ext_resource type="Texture2D" uid="uid://4450cwnbejwb" path="res://images/signlecoine.png" id="7_yhwje"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=1215247796]
+script = ExtResource("1_pf2wv")
 
-[node name="ConGratScewne" type="Sprite2D" parent="."]
+[node name="ConGratScewne" type="Sprite2D" parent="." unique_id=775482336]
 position = Vector2(576, 324)
 texture = ExtResource("1_qixq0")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=55081353]
 offset_left = 252.0
 offset_top = 21.0
 offset_right = 514.0
@@ -20,7 +24,7 @@ scale = Vector2(2.3, 2.3)
 theme_override_fonts/font = ExtResource("2_wnxaw")
 text = "You Beat WAY HOME!"
 
-[node name="ButtonCongrat" type="Button" parent="."]
+[node name="ButtonCongrat" type="Button" parent="." unique_id=1217425519]
 offset_left = 1037.0
 offset_top = 19.000002
 offset_right = 1077.0
@@ -28,5 +32,27 @@ offset_bottom = 59.0
 scale = Vector2(1.5, 1.5)
 icon = ExtResource("3_fcrmx")
 script = ExtResource("4_pf2wv")
+
+[node name="Label2" type="Label" parent="." unique_id=117740138]
+offset_left = 18.0
+offset_top = 5.0
+offset_right = 218.0
+offset_bottom = 28.0
+theme_override_fonts/font = ExtResource("6_5m62c")
+text = "Coins Collected:"
+
+[node name="Signlecoine" type="Sprite2D" parent="." unique_id=57610008]
+position = Vector2(48.999996, 46.999996)
+scale = Vector2(1.9375001, 1.9375001)
+texture = ExtResource("7_yhwje")
+
+[node name="Label3" type="Label" parent="." unique_id=1833287801]
+offset_left = 101.0
+offset_top = 32.0
+offset_right = 115.0
+offset_bottom = 55.0
+scale = Vector2(1.6, 1.6)
+theme_override_fonts/font = ExtResource("6_5m62c")
+text = "0"
 
 [connection signal="pressed" from="ButtonCongrat" to="ButtonCongrat" method="_on_pressed"]

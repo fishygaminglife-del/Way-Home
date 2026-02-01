@@ -3,6 +3,7 @@ extends Node2D
 var hearts_remain = 3
 
 func _ready() -> void:
+	Global.coins = 0
 	$Player/Node2D/Button2.disabled = true
 	$Player/PlayBut.visible = false
 	$Player/PlayBut.disabled = true

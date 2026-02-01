@@ -820,6 +820,32 @@ speed_scale = 0.4
 [node name="Coin12d" type="CollisionShape2D" parent="Coins/Coin5/Area5" unique_id=1941704164]
 shape = SubResource("CircleShape2D_rur20")
 
+[node name="Coin7" type="AnimatedSprite2D" parent="Coins" unique_id=31752088]
+position = Vector2(1211, -48)
+sprite_frames = SubResource("SpriteFrames_vwjju")
+frame_progress = 0.94607514
+speed_scale = 0.4
+
+[node name="Area7" type="Area2D" parent="Coins/Coin7" unique_id=1289138138]
+position = Vector2(8, 0)
+
+[node name="Coin72d" type="CollisionShape2D" parent="Coins/Coin7/Area7" unique_id=1785638361]
+position = Vector2(-8, 0)
+shape = SubResource("CircleShape2D_rur20")
+
+[node name="Coin8" type="AnimatedSprite2D" parent="Coins" unique_id=1960333683]
+position = Vector2(2247, -224)
+sprite_frames = SubResource("SpriteFrames_vwjju")
+frame_progress = 0.94607514
+speed_scale = 0.4
+
+[node name="Area8" type="Area2D" parent="Coins/Coin8" unique_id=1746659187]
+position = Vector2(8, 0)
+
+[node name="Coin82d" type="CollisionShape2D" parent="Coins/Coin8/Area8" unique_id=1453932133]
+position = Vector2(-8, 0)
+shape = SubResource("CircleShape2D_rur20")
+
 [node name="SS" type="Sprite2D" parent="Coins" unique_id=1346890597]
 position = Vector2(-35, -10)
 scale = Vector2(1.1875, 1.1875)
@@ -997,6 +1023,8 @@ texture = ExtResource("35_vwjju")
 [connection signal="body_entered" from="Coins/Coin1/Area3" to="Coins" method="_on_area_3_body_entered"]
 [connection signal="body_entered" from="Coins/Coin3/Area4" to="Coins" method="_on_area_4_body_entered"]
 [connection signal="body_entered" from="Coins/Coin5/Area5" to="Coins" method="_on_area_5_body_entered"]
+[connection signal="body_entered" from="Coins/Coin7/Area7" to="Coins" method="_on_area_7_body_entered"]
+[connection signal="body_entered" from="Coins/Coin8/Area8" to="Coins" method="_on_area_8_body_entered"]
 [connection signal="pressed" from="Player/PauseBut" to="." method="_on_pause_but_pressed"]
 [connection signal="pressed" from="Player/Node2D/Button" to="Player/Node2D" method="_on_button_pressed"]
 [connection signal="pressed" from="Player/Node2D/Button2" to="Player/Node2D" method="_on_button_2_pressed"]

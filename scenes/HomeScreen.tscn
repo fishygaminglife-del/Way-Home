@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bkhvv37ovsxm"]
+[gd_scene format=3 uid="uid://bkhvv37ovsxm"]
 
 [ext_resource type="Script" uid="uid://bvoovga4fls6x" path="res://scripts/home_screen.gd" id="1_gi7ve"]
 [ext_resource type="Texture2D" uid="uid://24j8a6c3k7ek" path="res://images/HomePage.png" id="1_iqt0l"]
@@ -42,14 +42,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="HomeScreen" type="Node2D"]
+[node name="HomeScreen" type="Node2D" unique_id=1792862301]
 script = ExtResource("1_gi7ve")
 
-[node name="HomePage" type="Sprite2D" parent="."]
+[node name="HomePage" type="Sprite2D" parent="." unique_id=455413716]
 position = Vector2(576, 324)
 texture = ExtResource("1_iqt0l")
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=1411679013]
 offset_left = 500.0
 offset_top = 231.0
 offset_right = 580.0
@@ -60,7 +60,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_3ie6y")
 theme_override_styles/hover = SubResource("StyleBoxFlat_iqt0l")
 text = "PLAY"
 
-[node name="Button2" type="Button" parent="."]
+[node name="Button2" type="Button" parent="." unique_id=1336170513]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -80,7 +80,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_3ie6y")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dki4i")
 text = "INSTRUCTIONS"
 
-[node name="Button3" type="Button" parent="."]
+[node name="Button3" type="Button" parent="." unique_id=202696032]
 offset_left = 482.0
 offset_top = 380.0
 offset_right = 582.0
@@ -92,16 +92,17 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_bjvx2")
 text = "LEVELS"
 script = ExtResource("4_gi7ve")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1505348631]
 offset_left = 369.0
 offset_top = 13.0
 offset_right = 493.0
 offset_bottom = 36.0
-scale = Vector2(3, 3)
+scale = Vector2(8, 8)
 theme_override_fonts/font = ExtResource("2_dki4i")
+theme_override_font_sizes/font_size = 8
 text = "Way Home"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1519558727]
 position = Vector2(132, 340)
 scale = Vector2(8.28125, 8.28125)
 sprite_frames = SubResource("SpriteFrames_ownjv")
@@ -109,7 +110,7 @@ frame_progress = 0.10119169
 speed_scale = 0.4
 script = ExtResource("4_l1h2q")
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1714465494]
 position = Vector2(1019, 341)
 scale = Vector2(8.28125, 8.28125)
 sprite_frames = SubResource("SpriteFrames_ownjv")
@@ -117,6 +118,34 @@ frame_progress = 0.7090183
 speed_scale = 0.4
 script = ExtResource("4_bjvx2")
 
+[node name="Secret" type="Button" parent="." unique_id=2111405546]
+offset_left = 132.0
+offset_top = 274.0
+offset_right = 140.0
+offset_bottom = 282.0
+
+[node name="Secret2" type="Button" parent="." unique_id=2138888232]
+offset_left = 157.0
+offset_top = 274.0
+offset_right = 165.0
+offset_bottom = 282.0
+
+[node name="Secret3" type="Button" parent="." unique_id=1138085846]
+offset_left = 986.0
+offset_top = 275.0
+offset_right = 994.0
+offset_bottom = 283.0
+
+[node name="Secret4" type="Button" parent="." unique_id=943395064]
+offset_left = 1011.0
+offset_top = 275.0
+offset_right = 1019.0
+offset_bottom = 283.0
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Secret" to="." method="_on_secret_pressed"]
+[connection signal="pressed" from="Secret2" to="." method="_on_secret_2_pressed"]
+[connection signal="pressed" from="Secret3" to="." method="_on_secret_3_pressed"]
+[connection signal="pressed" from="Secret4" to="." method="_on_secret_4_pressed"]

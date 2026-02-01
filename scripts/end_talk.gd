@@ -20,11 +20,7 @@ func _on_body_entered(body: Node2D) -> void:
 		await body.get_node("AnimationPlayer").animation_finished
 		body.get_node("TextBox").visible = false
 		body.get_node("Npc").visible = false
-		finish_scene()
-		
-func finish_scene():
-	Global.button_unlocked2 = true
-	get_tree().change_scene_to_file("res://scenes/LevelScene.tscn")
+		get_tree().change_scene_to_file("res://scenes/LevelScene.tscn")
 
 func _on_body_exited(body: Node2D) -> void:
 	pass 

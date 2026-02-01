@@ -27,7 +27,7 @@ func _on_body_entered(body: Node2D) -> void:
 		$"../StaticBody2D/blocker 3".disabled = true
 		$"../SpriteAnimations/Arrow2".visible = true
 		
-		is_playing = false
+
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		pass

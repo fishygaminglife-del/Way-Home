@@ -4,6 +4,15 @@ var hit_BB = 0
 var end_talk3 = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Global.hearts_remain3  = 4
+	$Player/PlayBut.visible = false
+	$Player/PlayBut.disabled = true
+	$Player/Node2D/HomePage.visible = false
+	$Player/Node2D/Button.visible = false
+	$Player/Node2D/Button2.visible = false
+	$Player/Node2D/Label.visible = false
+	$Player/Node2D/Button.disabled = true
+	$Player/Node2D/Button2.disabled = true
 	$Fire/AnimatedSprite2D.visible = false
 	$Fire/AnimatedSprite2D4.visible = false
 	$Fire/AnimatedSprite2D3.visible = false
@@ -36,7 +45,14 @@ func boulderfall():
 	
 func _process(_delta):
 	update_heart_ui3()
-
+	if Global.hearts_remain3 < 1:
+		$Player/Node2D/HomePage.visible = true
+		$Player/Node2D/Button.visible = true
+		$Player/Node2D/Button2.visible = true
+		$Player/Node2D/Label.visible = true
+		$Player/Node2D/Button.disabled = false
+		$Player/Node2D/Button2.disabled = false
+		get_tree().paused = true
 
 
 func update_heart_ui3():
@@ -100,3 +116,27 @@ func _on_end_talk_body_entered(body: Node2D) -> void:
 		await body.get_node("AnimationPlayer").animation_finished
 		Global.check3 = true
 		get_tree().change_scene_to_file("res://scenes/LastCelebrate.tscn")
+
+
+func _on_pause_but_pressed() -> void:
+	$Player/Node2D/HomePage.visible = true
+	$Player/Node2D/Button.visible = true
+	$Player/Node2D/Button2.visible = true
+	$Player/Node2D/Label.visible = true
+	$Player/Node2D/Button.disabled = false
+	$Player/Node2D/Button2.disabled = false
+	$Player/PlayBut.visible = true
+	$Player/PlayBut.disabled = false
+	get_tree().paused = true
+
+
+func _on_play_but_pressed() -> void:
+	$Player/Node2D/HomePage.visible = false
+	$Player/Node2D/Button.visible = false
+	$Player/Node2D/Button2.visible = false
+	$Player/Node2D/Label.visible = false
+	$Player/Node2D/Button.disabled = true
+	$Player/Node2D/Button2.disabled = true
+	$Player/PlayBut.visible = false
+	$Player/PlayBut.disabled = true
+	get_tree().paused = false

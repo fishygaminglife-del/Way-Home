@@ -1,12 +1,19 @@
 extends Node2D
 
 func _ready() -> void:
-
+	finish_scene()
+	$Player/PlayBut.visible = false
+	$Player/PlayBut.disabled = true
 	$SpriteAnimations/Arrow3.visible = false
 	$NpcTalk/CollisionShape2D.disabled = true
 	$SpriteAnimations/Arrow2.visible = false 
 	$StaticBody2D/blocker1.disabled = false
-
+	$Player/Node2D/HomePage.visible = false
+	$Player/Node2D/Button.visible = false
+	$Player/Node2D/Button2.visible = false
+	$Player/Node2D/Label.visible = false
+	$Player/Node2D/Button.disabled = true
+	$Player/Node2D/Button2.disabled = true
 	$SpriteAnimations/Arrow.visible = false
 	$Player/TextBox.visible = false
 	$Player/Text.visible = false
@@ -40,3 +47,29 @@ func _ready() -> void:
 		$Player/TextBox.visible = false
 	else:
 		pass
+
+func finish_scene():
+	Global.button_unlocked2 = true
+
+func _on_pause_but_pressed() -> void:
+	$Player/Node2D/HomePage.visible = true
+	$Player/Node2D/Button.visible = true
+	$Player/Node2D/Button2.visible = true
+	$Player/Node2D/Label.visible = true
+	$Player/Node2D/Button.disabled = false
+	$Player/Node2D/Button2.disabled = false
+	$Player/PlayBut.visible = true
+	$Player/PlayBut.disabled = false
+	get_tree().paused = true
+
+
+func _on_play_but_pressed() -> void:
+	$Player/Node2D/HomePage.visible = false
+	$Player/Node2D/Button.visible = false
+	$Player/Node2D/Button2.visible = false
+	$Player/Node2D/Label.visible = false
+	$Player/Node2D/Button.disabled = true
+	$Player/Node2D/Button2.disabled = true
+	$Player/PlayBut.visible = false
+	$Player/PlayBut.disabled = true
+	get_tree().paused = false

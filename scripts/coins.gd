@@ -23,6 +23,7 @@ func _ready() -> void:
 func _on_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") and coinbody1 == false:
 		coinbody1 = true
+		$CoinSound.play()
 		$Coin6.visible = false
 		$Coin6/Area/Coin12d.disabled = true
 		Global.coins += 1
@@ -30,6 +31,7 @@ func _on_area_body_entered(body: Node2D) -> void:
 func _on_area_1_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") and coinbody2 == false:
 		coinbody2 = true
+		$CoinSound.play()		
 		$Coin4/Area1/Coin12d.disabled = true
 		$Coin4.visible = false
 		Global.coins += 1
@@ -37,6 +39,7 @@ func _on_area_1_body_entered(body: Node2D) -> void:
 func _on_area_2_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") and coinbody3 == false:
 		coinbody3 = true
+		$CoinSound.play()		
 		$Coin2.visible = false
 		$Coin2/Area2/Coin12d.disabled = true
 		Global.coins += 1
@@ -44,6 +47,7 @@ func _on_area_2_body_entered(body: Node2D) -> void:
 func _on_area_3_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") and coinbody4 == false:
 		coinbody4 = true
+		$CoinSound.play()		
 		$Coin1/Area3/Coin12d.disabled = true
 		$Coin1.visible = false
 		Global.coins += 1
@@ -51,6 +55,7 @@ func _on_area_3_body_entered(body: Node2D) -> void:
 func _on_area_4_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") and coinbody5 == false:
 		coinbody5 = true
+		$CoinSound.play()		
 		$Coin3.visible = false
 		$Coin3/Area4/Coin12d.disabled = true
 		Global.coins += 1
@@ -58,6 +63,7 @@ func _on_area_4_body_entered(body: Node2D) -> void:
 func _on_area_5_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") and coinbody6 == false:
 		coinbody6 = true
+		$CoinSound.play()		
 		$Coin5/Area5/Coin12d.disabled = true
 		$Coin5.visible = false
 		Global.coins += 1
@@ -66,6 +72,7 @@ func _on_area_5_body_entered(body: Node2D) -> void:
 func _on_area_7_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") and coinbody7 == false:
 		coinbody7 = true
+		$CoinSound.play()	
 		$Coin7/Area7/Coin72d.disabled = true
 		$Coin7.visible = false
 		Global.coins += 1
@@ -74,6 +81,7 @@ func _on_area_7_body_entered(body: Node2D) -> void:
 func _on_area_8_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") and coinbody8 == false:
 		coinbody8 = true
+		$CoinSound.play()		
 		$Coin8/Area8/Coin82d.disabled = true
 		$Coin8.visible = false
 		Global.coins += 1

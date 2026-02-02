@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfqnmphu1ydgq"]
+[gd_scene format=3 uid="uid://cfqnmphu1ydgq"]
 
 [ext_resource type="Texture2D" uid="uid://bmbvh688lukpf" path="res://images/PageScenes.png" id="1_6u845"]
 [ext_resource type="FontFile" uid="uid://crprgneoqco73" path="res://fonts/pixel_operator/PixelOperator8-Bold.ttf" id="2_axg17"]
@@ -6,13 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://d1ym4octx17t8" path="res://images/homebutton.png" id="4_chvnd"]
 [ext_resource type="Script" uid="uid://cq6qq03ykqufp" path="res://scripts/home_buttonIC.gd" id="5_liipc"]
 
-[node name="Instruction_Credit" type="Node2D"]
+[node name="Instruction_Credit" type="Node2D" unique_id=1216846673]
 
-[node name="PageScenes" type="Sprite2D" parent="."]
+[node name="PageScenes" type="Sprite2D" parent="." unique_id=1594547667]
 position = Vector2(576, 324)
 texture = ExtResource("1_6u845")
 
-[node name="InstructionTitle" type="Label" parent="."]
+[node name="InstructionTitle" type="Label" parent="." unique_id=1948821544]
 offset_left = 178.0
 offset_top = 54.0
 offset_right = 575.5
@@ -23,7 +23,7 @@ text = "INSTRUCTIONS"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="InstructionTxt" type="Label" parent="."]
+[node name="InstructionTxt" type="Label" parent="." unique_id=120191501]
 offset_left = 192.0
 offset_top = 124.0
 offset_right = 575.0
@@ -37,7 +37,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="CreditTitle" type="Label" parent="."]
+[node name="CreditTitle" type="Label" parent="." unique_id=2082576543]
 offset_left = 178.0
 offset_top = 277.0
 offset_right = 575.5
@@ -48,7 +48,7 @@ text = "CREDIT"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="CreditTxt" type="Label" parent="."]
+[node name="CreditTxt" type="Label" parent="." unique_id=306134839]
 offset_left = 177.0
 offset_top = 325.0
 offset_right = 575.0
@@ -57,12 +57,12 @@ scale = Vector2(2, 2)
 theme_override_constants/line_spacing = 5
 theme_override_fonts/font = ExtResource("3_chvnd")
 theme_override_font_sizes/font_size = 8
-text = "All grapics and art made by Fishyyyyyyy (Me), Google Fonts Pixel Operator, Audio from Mark Ronson Feat Bruno Mars: UpTownFunk"
+text = "All grapics and audio made by Fishyyyyyyy (Me), Google Fonts Pixel Operator, Audio from Mark Ronson Feat Bruno Mars: UpTownFunk"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="HomeButton" type="Button" parent="."]
+[node name="HomeButton" type="Button" parent="." unique_id=475757831]
 offset_left = 1076.0
 offset_top = 16.0
 offset_right = 1116.0

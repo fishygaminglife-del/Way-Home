@@ -22,4 +22,5 @@ func play(stream: AudioStream):
 	player.stop()
 	player.stream = stream
 	player.stream.loop = true
+	player.volume_db = -15
 	player.play()

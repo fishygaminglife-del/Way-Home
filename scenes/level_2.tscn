@@ -29,6 +29,9 @@
 [ext_resource type="Script" uid="uid://71j8iu63v7xd" path="res://scripts/coins.gd" id="23_3buw8"]
 [ext_resource type="PackedScene" uid="uid://dcfhd5nha04vt" path="res://scenes/checkpoint.tscn" id="23_vhnap"]
 [ext_resource type="Texture2D" uid="uid://bnky23m0eldi2" path="res://images/Pause Button.png" id="24_taw0e"]
+[ext_resource type="AudioStream" uid="uid://df7h02joe0s7l" path="res://audio/CoinPickup.ogg" id="25_rur20"]
+[ext_resource type="AudioStream" uid="uid://c1dr0fgd1tn4a" path="res://audio/Scratch.ogg" id="26_0na3t"]
+[ext_resource type="AudioStream" uid="uid://dihylngxu76fj" path="res://audio/Falling.ogg" id="27_gxp3h"]
 [ext_resource type="Texture2D" uid="uid://4450cwnbejwb" path="res://images/signlecoine.png" id="27_vwjju"]
 [ext_resource type="Script" uid="uid://b73s3nox0ifso" path="res://scripts/game_over_screen.gd" id="28_73m23"]
 [ext_resource type="Texture2D" uid="uid://24j8a6c3k7ek" path="res://images/HomePage.png" id="29_45kkt"]
@@ -506,7 +509,7 @@ scale = Vector2(0.367, 0.367)
 texture = ExtResource("2_jm1iu")
 
 [node name="Background20" type="Sprite2D" parent="Backgrounds2" unique_id=1045636931]
-position = Vector2(2195.2002, 833)
+position = Vector2(2195.2002, 832.0001)
 rotation = -3.1415927
 scale = Vector2(0.367, 0.367)
 texture = ExtResource("2_jm1iu")
@@ -862,6 +865,23 @@ theme_override_font_sizes/font_size = 8
 text = "Head Back Out"
 autowrap_mode = 2
 
+[node name="CoinSound" type="AudioStreamPlayer2D" parent="Coins" unique_id=1026223363]
+stream = ExtResource("25_rur20")
+
+[node name="Scratch" type="AudioStreamPlayer2D" parent="." unique_id=1145908291]
+stream = ExtResource("26_0na3t")
+
+[node name="Fall" type="AudioStreamPlayer2D" parent="." unique_id=1111598756]
+position = Vector2(267, 677)
+rotation = 2.654019
+stream = ExtResource("27_gxp3h")
+
+[node name="Arrrowlight" type="Sprite2D" parent="." unique_id=1066058385]
+modulate = Color(1, 1, 1, 0.39607844)
+position = Vector2(267, 677)
+rotation = 2.654019
+texture = ExtResource("35_vwjju")
+
 [node name="Player" parent="." unique_id=1609678275 instance=ExtResource("6_g2hoc")]
 position = Vector2(129, 408)
 
@@ -1000,12 +1020,6 @@ offset_right = 160.0
 offset_bottom = -14.000008
 scale = Vector2(0.4, 0.4)
 icon = ExtResource("31_7egwj")
-
-[node name="Arrrowlight" type="Sprite2D" parent="." unique_id=1066058385]
-modulate = Color(1, 1, 1, 0.39607844)
-position = Vector2(267, 677)
-rotation = 2.654019
-texture = ExtResource("35_vwjju")
 
 [connection signal="body_entered" from="Area_2d\'s/Thorn Life" to="Area_2d\'s/Thorn Life" method="_on_body_entered"]
 [connection signal="body_exited" from="Area_2d\'s/Thorn Life" to="Area_2d\'s/Thorn Life" method="_on_body_exited"]

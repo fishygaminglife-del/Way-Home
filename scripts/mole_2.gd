@@ -23,6 +23,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		Global.update_hearts()	
 		body.position = Vector2(709, 836)	
+		$"../Scratch".play()
 		body.get_node("Text").text = "**Rawr** **Scratch**"
 		body.get_node("Namelabel").text = "Mole"
 		body.get_node("TextBox").visible = true

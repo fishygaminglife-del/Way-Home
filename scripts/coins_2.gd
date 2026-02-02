@@ -23,15 +23,16 @@ func _ready() -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") and coinbody32 == false:
 		coinbody32 = true
+		$CoinSound.play()
 		$AnimatedSprite2D.visible = false
 		$AnimatedSprite2D/Area2D/CollisionShape2D.disabled = true
 		Global.coins += 1
 		body.get_node("CoinLabel2").text = str(Global.coins)
 
-
 func _on_area_7_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") and coinbody37 == false:
 		coinbody37 = true
+		$CoinSound.play()		
 		$Coin7.visible = false
 		$Coin7/Area7/Coin7d.disabled = true
 		Global.coins += 1
@@ -40,6 +41,7 @@ func _on_area_7_body_entered(body: Node2D) -> void:
 func _on_area_6_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") and coinbody36 == false:
 		coinbody36 = true
+		$CoinSound.play()				
 		$Coin6.visible = false
 		$Coin6/Area6/Coin62d.disabled = true
 		Global.coins += 1
@@ -48,9 +50,11 @@ func _on_area_6_body_entered(body: Node2D) -> void:
 
 func _on_area_8_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") and rando <2:
+		$CoinSound.play()		
 		body.position = Vector2(172, 86)
 
 
 func _on_area_9_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") and rando > 2 and rando < 4:
+		$CoinSound.play()		
 		body.position = Vector2(609, 401)

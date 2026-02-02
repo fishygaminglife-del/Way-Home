@@ -30,6 +30,7 @@
 [ext_resource type="Script" uid="uid://btq16wsondt2g" path="res://scripts/coins_2.gd" id="24_365g5"]
 [ext_resource type="Texture2D" uid="uid://sdf82cpuugls" path="res://SpriteFrames/CoinAnimation.png" id="25_50287"]
 [ext_resource type="Texture2D" uid="uid://bnky23m0eldi2" path="res://images/Pause Button.png" id="25_detxl"]
+[ext_resource type="AudioStream" uid="uid://df7h02joe0s7l" path="res://audio/CoinPickup.ogg" id="26_os8re"]
 [ext_resource type="Script" uid="uid://b73s3nox0ifso" path="res://scripts/game_over_screen.gd" id="28_1rxxv"]
 [ext_resource type="Texture2D" uid="uid://4450cwnbejwb" path="res://images/signlecoine.png" id="28_50287"]
 [ext_resource type="Texture2D" uid="uid://24j8a6c3k7ek" path="res://images/HomePage.png" id="29_ld1e4"]
@@ -621,7 +622,7 @@ script = ExtResource("1_5xqnf")
 [node name="Background" type="Node2D" parent="." unique_id=1997208213]
 
 [node name="Background6" type="Sprite2D" parent="Background" unique_id=250739408]
-position = Vector2(-258, -4.0000153)
+position = Vector2(-258, -2.0000155)
 rotation = 3.1415927
 scale = Vector2(0.367, 0.367)
 texture = ExtResource("2_5kn0t")
@@ -632,7 +633,7 @@ scale = Vector2(0.367, 0.367)
 texture = ExtResource("2_5kn0t")
 
 [node name="Background2" type="Sprite2D" parent="Background" unique_id=1711573322]
-position = Vector2(281, 363)
+position = Vector2(282, 363)
 scale = Vector2(0.367, 0.367)
 texture = ExtResource("2_5kn0t")
 
@@ -648,6 +649,11 @@ texture = ExtResource("2_5kn0t")
 
 [node name="Background5" type="Sprite2D" parent="Background" unique_id=1603353366]
 position = Vector2(1564, 363)
+scale = Vector2(0.367, 0.367)
+texture = ExtResource("2_5kn0t")
+
+[node name="Background7" type="Sprite2D" parent="Background" unique_id=961045947]
+position = Vector2(-820.00006, 363)
 scale = Vector2(0.367, 0.367)
 texture = ExtResource("2_5kn0t")
 
@@ -675,7 +681,7 @@ scale = Vector2(0.367, 0.367)
 texture = ExtResource("2_5kn0t")
 
 [node name="Background16" type="Sprite2D" parent="Background" unique_id=479324285]
-position = Vector2(969.2002, 726.5)
+position = Vector2(970.20013, 726.50006)
 rotation = -3.1415927
 scale = Vector2(0.367, 0.367)
 texture = ExtResource("2_5kn0t")
@@ -803,7 +809,7 @@ position = Vector2(282, 597)
 shape = SubResource("SegmentShape2D_5xqnf")
 
 [node name="CollisionShape2D20" type="CollisionShape2D" parent="StaticBody2D" unique_id=1696092903]
-position = Vector2(421, 593)
+position = Vector2(439, 596)
 shape = SubResource("SegmentShape2D_8uepa")
 
 [node name="CollisionShape2D22" type="CollisionShape2D" parent="StaticBody2D" unique_id=1008921057]
@@ -1167,6 +1173,9 @@ position = Vector2(8, 0)
 [node name="Coin62d" type="CollisionShape2D" parent="coins2/Coin6/Area6" unique_id=1625961772]
 position = Vector2(-8, 0)
 shape = SubResource("CircleShape2D_os8re")
+
+[node name="CoinSound" type="AudioStreamPlayer2D" parent="coins2" unique_id=635000506]
+stream = ExtResource("26_os8re")
 
 [node name="Player" parent="." unique_id=1688228517 instance=ExtResource("7_q2dsb")]
 position = Vector2(604, 715)

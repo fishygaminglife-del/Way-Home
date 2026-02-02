@@ -4,6 +4,8 @@ var hit_BB = 0
 var end_talk3 = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Coin8.visible = false
+	$Coin9.visible = false
 	Global.hearts_remain3  = 4
 	$Player/CoinLabel2.text = str(Global.coins)
 	$Player/PlayBut.visible = false

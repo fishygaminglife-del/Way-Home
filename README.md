@@ -75,6 +75,7 @@ UpTownFunk music by Mark Ronson, feat. Bruno Mars
 
 ## 🚀 How to Play
 - Open the game on itch.io
+- Search up Way Home by Fishyyyyyyy_life
 - Use the arrow keys to move and jump
 - Avoid enemies and hazards
 - Activate checkpoints to save progress

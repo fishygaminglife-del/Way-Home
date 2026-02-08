@@ -12,45 +12,25 @@ This is a 2D platformer created using Godot, featuring three levels, enemy encou
 ## 🗺️ Levels
 
 ### Level 1 — Tutorial
-- Learn movement and jumping
-- Read instructions and interact with UI elements
-- Meet your first hazards
-- Introduces basic enemies
+- Learn how to play and different obstacles
 
 ### Level 2 — Challenge
-- More complex platforming
-- Checkpoints to save progress
-- Faster and more dangerous enemies
-
+- More obstacles, and coins introduced
+  
 ### Level 3 — Final Level
-- Hardest enemy patterns
-- Longer jumps and tighter timing
-- Final challenge to complete the game
+- Hardest level, including different colored coins, and more enimies
 
-## 👾 Enemies & Hazards
-Your adventure includes several types of enemies and obstacles:
+## 👾 Enemies
+Different enemies in the game
 
-### 🪨 Boulders
-Falling hazards that move along paths and deal damage on contact.
+### 🪨 Obstacles
+Falling boulders, fire, spikes, and a pit to fall in.
 
-### 🐾 Moles
-Burrowing enemies that pop out of the ground and surprise the player.
-
-### 🔥 Fire Traps
-Stationary hazards that burn the player if touched.
-
-### ⚔️ Spikes
-Instant‑damage obstacles placed on floors or walls.
-
-### ⚙️ Other Traps
-Additional mechanical hazards such as traps that activate when touched.
 
 ## ❤️ Health System
-The player uses a heart‑based health system:
 - Taking damage removes one heart
 - If hearts reach zero:
-  - The player respawns at the last checkpoint (if activated), or
-  - The level reloads from the beginning
+  - The player respawns at the last checkpoint (if activated), or the level reloads from the beginning
 
 This keeps the game challenging but fair.
 
@@ -63,15 +43,12 @@ Checkpoints allow the player to continue from a saved position instead of restar
 ## 🎵 Music
 UpTownFunk music by Mark Ronson, feat. Bruno Mars
 
-## 🛠️ Technology
+## Extra
 - Engine: Godot
 - Language: GDScript
 - Platform: itch.io
-- Autoloaded global state
 - Checkpoint system
-- Scene transitions
-- UI animations
-- Multiple enemy and hazard types
+- Coins
 
 ## 🚀 How to Play
 - Open the game on itch.io
